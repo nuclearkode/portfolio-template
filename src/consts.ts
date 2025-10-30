@@ -1,6 +1,14 @@
 // Global site metadata used across the portfolio.
-const SITE_TITLE = 'Ahmed — Platform Engineer';
-const SITE_DESCRIPTION =
-  'Portfolio and engineering journal of Ahmed, building resilient platforms, robotics systems, and developer tooling.';
+export type SiteMetadata = {
+  title: string;
+  description: string;
+};
 
-export { SITE_TITLE, SITE_DESCRIPTION };
+export const SITE_METADATA: SiteMetadata = {
+  title: 'Ahmed — Platform Engineer',
+  description:
+    'Portfolio and engineering journal of Ahmed, building resilient platforms, robotics systems, and developer tooling.',
+};
+
+export const SITE_TITLE = SITE_METADATA.title;
+export const SITE_DESCRIPTION = SITE_METADATA.description;
