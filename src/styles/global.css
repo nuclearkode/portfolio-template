@@ -43,6 +43,7 @@ body {
   color: rgb(var(--gray));
   font-size: 18px;
   line-height: 1.7;
+  overflow-x: hidden;
 }
 
 main {
