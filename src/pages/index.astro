@@ -117,42 +117,87 @@ const tools = [
         <head>
                 <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
                 <style>
+                        main {
+                                width: 100%;
+                                margin: 0;
+                                padding: 0;
+                        }
                         .hero {
-                                display: grid;
-                                gap: 3rem;
+                                position: relative;
+                                width: 100vw;
+                                margin: 0 calc(50% - 50vw);
+                                min-height: min(88vh, 760px);
+                                padding: clamp(6rem, 12vw, 9rem) clamp(1.5rem, 10vw, 6rem) clamp(6rem, 10vw, 8rem);
+                                display: flex;
                                 align-items: center;
-                                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                                padding: 4rem 0 3rem;
+                                justify-content: flex-start;
+                                color: rgba(255, 255, 255, 0.88);
+                                background:
+                                        linear-gradient(135deg, rgba(4, 7, 22, 0.92) 0%, rgba(15, 23, 42, 0.45) 45%, rgba(2, 6, 23, 0.92) 100%),
+                                        url('https://images.unsplash.com/photo-1588436706487-9d55d73a39e3?auto=format&fit=crop&w=2400&q=80')
+                                                center / cover no-repeat;
+                                overflow: hidden;
                         }
-                        .hero-copy h1 {
-                                margin-bottom: 1.25rem;
+                        .hero::after {
+                                content: '';
+                                position: absolute;
+                                inset: 0;
+                                background: radial-gradient(circle at 10% 10%, rgba(59, 130, 246, 0.25), transparent 45%),
+                                        radial-gradient(circle at 90% 20%, rgba(56, 189, 248, 0.2), transparent 40%);
+                                mix-blend-mode: screen;
+                                opacity: 0.85;
                         }
-                        .hero-copy p {
+                        .hero__content {
+                                position: relative;
+                                max-width: min(640px, 90%);
+                                z-index: 1;
+                        }
+                        .hero__content h1 {
+                                margin-bottom: 1.5rem;
+                                color: #fff;
+                                font-size: clamp(3rem, 6vw, 4.75rem);
+                                letter-spacing: -0.02em;
+                        }
+                        .hero__content p {
                                 font-size: 1.2rem;
-                                color: rgb(var(--gray));
-                                max-width: 48ch;
+                                color: rgba(255, 255, 255, 0.78);
+                                max-width: 52ch;
+                        }
+                        .hero .eyebrow {
+                                color: rgba(255, 255, 255, 0.65);
+                                letter-spacing: 0.24em;
+                                margin-bottom: 1.25rem;
                         }
                         .hero-actions {
                                 display: flex;
                                 gap: 1rem;
                                 flex-wrap: wrap;
-                                margin-top: 2rem;
+                                margin-top: 2.5rem;
                         }
-                        .hero-figure {
-                                position: relative;
+                        .hero .button {
+                                box-shadow: 0 24px 45px rgba(37, 99, 235, 0.3);
                         }
-                        .hero-figure img {
-                                width: 100%;
-                                border-radius: 24px;
+                        .hero .button--ghost {
+                                color: #fff;
+                                box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.6);
+                        }
+                        .hero .button--ghost:hover {
+                                background: rgba(255, 255, 255, 0.18);
+                                color: #fff;
+                        }
+                        .page-sections {
+                                width: min(1100px, calc(100% - 2rem));
+                                margin: -4.5rem auto 0;
+                                padding: 0 0 5rem;
+                                display: grid;
+                                gap: 4rem;
+                        }
+                        .page-sections .section {
+                                margin: 0;
+                                padding: clamp(2.5rem, 6vw, 3.5rem);
+                                background: white;
+                                border-radius: 28px;
                                 box-shadow: var(--box-shadow);
-                        }
-                        .hero-figure::after {
-                                content: '';
-                                position: absolute;
-                                inset: 12px;
-                                border-radius: 24px;
-                                border: 2px solid rgba(37, 99, 235, 0.2);
-                                pointer-events: none;
                         }
                         .projects-grid {
                                 margin-top: 2rem;
@@ -231,9 +276,26 @@ const tools = [
                         .writing-card p {
                                 color: rgb(var(--gray));
                         }
+                        @media (max-width: 900px) {
+                                .hero {
+                                        min-height: 75vh;
+                                }
+                        }
                         @media (max-width: 720px) {
                                 .hero {
-                                        padding: 3rem 0 2rem;
+                                        padding: 6rem 1.5rem 4rem;
+                                        text-align: center;
+                                        justify-content: center;
+                                }
+                                .hero__content {
+                                        margin: 0 auto;
+                                }
+                                .hero-actions {
+                                        justify-content: center;
+                                }
+                                .page-sections {
+                                        margin-top: -3rem;
+                                        gap: 3rem;
                                 }
                         }
                 </style>
@@ -242,28 +304,26 @@ const tools = [
                 <Header />
                 <main>
                         <section class="hero">
-                                <div class="hero-copy">
+                                <div class="hero__content">
                                         <p class="eyebrow">Jordan Mitchell · Product Designer</p>
-                                        <h1>Designing inclusive products that move metrics and hearts.</h1>
+                                        <h1>Hi, I&rsquo;m Jordan Mitchell.</h1>
                                         <p>
-                                                I help teams transform insight into experiences people love. From vision decks and
-                                                research synthesis to the pixels in production, I partner across disciplines to bring
-                                                digital products to market with clarity and care.
+                                                I&rsquo;m an inclusive product design leader focused on aerospace, health, and mission-critical
+                                                tools. I translate complex systems into intuitive experiences that help teams move faster and
+                                                make better decisions.
                                         </p>
                                         <div class="hero-actions">
-                                                <a class="button" href="#work">See recent work</a>
-                                                <a class="button button--ghost" href="mailto:hello@jordanmitchell.design">Say hello</a>
+                                                <a class="button" href="#work">View work</a>
+                                                <a class="button button--ghost" href="mailto:hello@jordanmitchell.design">Get in touch</a>
                                         </div>
-                                </div>
-                                <div class="hero-figure">
-                                        <img src="/blog-placeholder-5.jpg" alt="Jordan collaborating with teammates while sketching flows" />
                                 </div>
                         </section>
 
-                        <section id="work" class="section">
-                                <div class="section-intro">
-                                        <p class="eyebrow">Selected work</p>
-                                        <h2>Recent outcomes from embedded partnerships.</h2>
+                        <div class="page-sections">
+                                <section id="work" class="section">
+                                        <div class="section-intro">
+                                                <p class="eyebrow">Selected work</p>
+                                                <h2>Recent outcomes from embedded partnerships.</h2>
                                         <p>
                                                 Each engagement blends research, prototyping, and facilitation to reduce uncertainty.
                                                 Dive into the full case studies for a look at the process, decisions, and measurable
@@ -295,12 +355,12 @@ const tools = [
                                                 </article>
                                         ))}
                                 </div>
-                        </section>
+                                </section>
 
-                        <section id="services" class="section">
-                                <div class="section-intro">
-                                        <p class="eyebrow">How we can collaborate</p>
-                                        <h2>Flexible engagements tailored to your stage.</h2>
+                                <section id="services" class="section">
+                                        <div class="section-intro">
+                                                <p class="eyebrow">How we can collaborate</p>
+                                                <h2>Flexible engagements tailored to your stage.</h2>
                                         <p>
                                                 Whether you need a thought partner to shape vision or an embedded leader to ship the
                                                 next release, we can design an engagement that meets you where you are.
@@ -322,12 +382,12 @@ const tools = [
                                                 ))}
                                         </div>
                                 </div>
-                        </section>
+                                </section>
 
-                        <section class="section">
-                                <div class="section-intro">
-                                        <p class="eyebrow">Experience</p>
-                                        <h2>Over a decade guiding teams from vision to launch.</h2>
+                                <section class="section">
+                                        <div class="section-intro">
+                                                <p class="eyebrow">Experience</p>
+                                                <h2>Over a decade guiding teams from vision to launch.</h2>
                                         <p>
                                                 Collaboration is my favorite tool. I create clarity, document decisions, and invite the
                                                 right voices into the room at the right moment.
@@ -342,12 +402,12 @@ const tools = [
                                                 </article>
                                         ))}
                                 </div>
-                        </section>
+                                </section>
 
-                        <section class="section">
-                                <div class="section-intro">
-                                        <p class="eyebrow">Praise</p>
-                                        <h2>Trusted by product leaders across industries.</h2>
+                                <section class="section">
+                                        <div class="section-intro">
+                                                <p class="eyebrow">Praise</p>
+                                                <h2>Trusted by product leaders across industries.</h2>
                                         <p>
                                                 Partnerships are personal. These teams invited me in when the stakes were high — here’s
                                                 what they had to say about the collaboration.
@@ -362,12 +422,12 @@ const tools = [
                                                 </blockquote>
                                         ))}
                                 </div>
-                        </section>
+                                </section>
 
-                        <section id="writing" class="section">
-                                <div class="section-intro">
-                                        <p class="eyebrow">Latest writing</p>
-                                        <h2>Notes on process, leadership, and inclusive design.</h2>
+                                <section id="writing" class="section">
+                                        <div class="section-intro">
+                                                <p class="eyebrow">Latest writing</p>
+                                                <h2>Notes on process, leadership, and inclusive design.</h2>
                                         <p>
                                                 Long-form reflections on the craft of building products. Subscribe to the RSS feed to
                                                 get new posts in your reader of choice.
@@ -389,8 +449,9 @@ const tools = [
                                                         </a>
                                                 </article>
                                         ))}
-                                </div>
-                        </section>
+                                        </div>
+                                </section>
+                        </div>
                 </main>
                 <Footer />
         </body>

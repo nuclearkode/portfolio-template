@@ -49,15 +49,15 @@ import { SITE_TITLE } from '../consts';
         .site-header {
                 margin: 0;
                 padding: 1rem 0;
-                background: rgba(255, 255, 255, 0.75);
-                backdrop-filter: blur(12px);
+                background: rgba(4, 7, 22, 0.72);
+                backdrop-filter: blur(16px);
                 position: sticky;
                 top: 0;
                 z-index: 10;
-                border-bottom: 1px solid rgba(var(--gray-light), 0.6);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
         nav {
-                width: min(1100px, calc(100% - 2rem));
+                width: min(1200px, calc(100% - 2.5rem));
                 margin: auto;
                 display: flex;
                 align-items: center;
@@ -67,7 +67,7 @@ import { SITE_TITLE } from '../consts';
         .brand {
                 font-weight: 700;
                 font-size: 1rem;
-                color: rgb(var(--black));
+                color: rgba(255, 255, 255, 0.95);
                 text-decoration: none;
                 letter-spacing: 0.08em;
                 text-transform: uppercase;
@@ -79,14 +79,15 @@ import { SITE_TITLE } from '../consts';
                 font-size: 0.95rem;
         }
         .internal-links a {
-                color: rgb(var(--black));
+                color: rgba(255, 255, 255, 0.78);
                 text-decoration: none;
                 font-weight: 600;
                 letter-spacing: 0.04em;
+                transition: color 0.2s ease;
         }
         .internal-links a:hover,
         .internal-links a.active {
-                color: var(--accent);
+                color: #fff;
         }
         .social-links,
         .social-links a {
@@ -97,14 +98,14 @@ import { SITE_TITLE } from '../consts';
                 gap: 0.5rem;
         }
         .social-links a {
-                color: rgb(var(--black));
+                color: rgba(255, 255, 255, 0.78);
                 padding: 0.35rem;
                 border-radius: 999px;
                 transition: background 0.2s ease, color 0.2s ease;
         }
         .social-links a:hover {
-                background: rgba(37, 99, 235, 0.12);
-                color: var(--accent);
+                background: rgba(255, 255, 255, 0.12);
+                color: #fff;
         }
         @media (max-width: 900px) {
                 nav {
