@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="title">A Project By Ahmed Badawy</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body id="top" class="dark">
+  <div class="noise" aria-hidden="true"></div>
+
+  <header>
+    <a class="brand" href="#top">
+      <span class="brand-dot"></span>
+      <span data-i18n="brand">A Project By Ahmed Badawy</span>
+    </a>
+    <div class="header-actions">
+      <button class="btn" id="toggleTheme" data-i18n="themeBtn" aria-label="Toggle theme">Theme</button>
+      <button class="btn" id="toggleLang" data-i18n="langBtn" aria-label="Switch language">FR</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero-wrap">
+      <div class="hero">
+        <span class="badge" data-i18n="badge">PASSION</span>
+        <div class="hero-content">
+          <img src="assets/images/ahmed-badawy-profile.svg" alt="Portrait of Ahmed Badawy" class="hero-avatar" />
+          <svg width="55%" viewBox="0 0 300 200" fill="none" stroke="currentColor" stroke-width="6" aria-hidden="true">
+            <rect x="5" y="5" width="290" height="190" rx="28" fill="rgba(255,255,255,.06)" />
+            <path d="M30 50h110M30 85h200M30 120h240M30 155h160" />
+          </svg>
+          <h1 class="hero-title" data-i18n="heroTitle">A PASSION</h1>
+          <p class="hero-tagline" data-i18n="heroTagline">Ahmed Badawy — Mechatronics &amp; Robotics</p>
+          <p data-i18n="heroBody">Multidisciplinary engineer crafting robotics systems, interactive controls, and story-driven demos.</p>
+          <div class="media" id="topCarousel" aria-label="Hero carousel">
+            <div class="media-inner" style="outline:2px solid rgba(255,255,255,.35); outline-offset:-12px; border-radius:18px;">
+              <div class="carousel" role="region" aria-roledescription="carousel" aria-label="3D objects carousel">
+                <div class="ring" id="ringTop">
+                  <a class="card" href="#proj-marine" data-target="#proj-marine">
+                    <div class="media-slot">
+                      <div class="media-placeholder" data-i18n="heroCarouselCard1">Marine vehicle tool — Open project</div>
+                    </div>
+                    <div class="desc" data-i18n="heroCarouselCard1">Marine vehicle tool — Open project</div>
+                  </a>
+                  <a class="card" href="#proj-stm32" data-target="#proj-stm32">
+                    <div class="media-slot">
+                      <div class="media-placeholder" data-i18n="heroCarouselCard2">STM32F411 board — See details</div>
+                    </div>
+                    <div class="desc" data-i18n="heroCarouselCard2">STM32F411 board — See details</div>
+                  </a>
+                  <a class="card" href="#proj-8051" data-target="#proj-8051">
+                    <div class="media-slot">
+                      <div class="media-placeholder" data-i18n="heroCarouselCard3">8051 speed control — Learn more</div>
+                    </div>
+                    <div class="desc" data-i18n="heroCarouselCard3">8051 speed control — Learn more</div>
+                  </a>
+                  <a class="card" href="#proj-labview" data-target="#proj-labview">
+                    <div class="media-slot">
+                      <div class="media-placeholder" data-i18n="heroCarouselCard4">Automation line — Visit project</div>
+                    </div>
+                    <div class="desc" data-i18n="heroCarouselCard4">Automation line — Visit project</div>
+                  </a>
+                  <a class="card" href="#proj-snowplow" data-target="#proj-snowplow">
+                    <div class="media-slot">
+                      <div class="media-placeholder" data-i18n="heroCarouselCard5">Custom plow — Fabrication notes</div>
+                    </div>
+                    <div class="desc" data-i18n="heroCarouselCard5">Custom plow — Fabrication notes</div>
+                  </a>
+                  <a class="card" href="#proj-diagram" data-target="#proj-diagram">
+                    <div class="media-slot">
+                      <div class="media-placeholder" data-i18n="heroCarouselCard6">Diagram Weaver — AI tool</div>
+                    </div>
+                    <div class="desc" data-i18n="heroCarouselCard6">Diagram Weaver — AI tool</div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="btn-row">
+            <a class="btn" href="#projects" data-i18n="ctaProjects">View Projects</a>
+            <a class="btn" href="#resume" data-i18n="ctaResume">Resume</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="quick">
+      <div class="inner">
+        <a class="tile" href="#resources"><span data-i18n="res">Resources</span></a>
+        <a class="tile" href="#projects"><span data-i18n="proj">Projects</span></a>
+        <a class="tile" href="#about"><span data-i18n="abt">About</span></a>
+        <a class="tile" href="#resume"><span data-i18n="cv">Resume</span></a>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-inner">
+        <h2 class="section-title" data-i18n="projects">Projects</h2>
+
+        <article class="project-block" id="proj-drone">
+          <div class="widgets">
+            <div class="media arm-stage" id="drone3d">
+              <div class="media-inner">
+                <div class="media-placeholder">3D Flight Telemetry</div>
+              </div>
+            </div>
+            <div class="media" aria-label="Aerial drone schematics">
+              <div class="media-inner">
+                <div class="media-placeholder">Mission Briefing</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-header">
+              <h3 data-i18n="p1Title">Aerial Drone</h3>
+              <div class="project-meta">
+                <a class="project-check" href="https://badawy.dev/projects/aerial-drone" target="_blank" rel="noopener" data-i18n="p1Check">Check it out</a>
+                <div class="project-resources">
+                  <a class="resource-icon" href="https://github.com/ahmedbadawy/aerial-drone" target="_blank" rel="noopener" aria-label="GitHub repository">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.15-1.12-1.46-1.12-1.46-.91-.63.07-.62.07-.62 1 .07 1.52 1.05 1.52 1.05.9 1.54 2.36 1.1 2.94.84.09-.66.35-1.1.63-1.35-2.22-.25-4.56-1.11-4.56-4.95 0-1.1.39-2 1.03-2.7-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.45 9.45 0 0 1 5 0c1.9-1.29 2.74-1.02 2.74-1.02.56 1.37.21 2.39.11 2.64.64.7 1.03 1.6 1.03 2.7 0 3.86-2.35 4.7-4.58 4.95.36.31.68.92.68 1.86v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+                  </a>
+                  <a class="resource-icon" href="https://drive.google.com/drive/folders/aerial-drone" target="_blank" rel="noopener" aria-label="Google Drive folder">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.12 3 2 11.86l3.54 6.14h5.41l-3.54-6.14L10.66 3H7.12Zm6.22 0-3.71 6.43 3.6 6.57H21L17.4 9.57 13.34 3h-.01ZM5.82 20.14 7 22h10l1.18-1.86H5.82Z"/></svg>
+                  </a>
+                  <a class="resource-icon" href="https://www.youtube.com/watch?v=aerial-drone-demo" target="_blank" rel="noopener" aria-label="YouTube demo">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2s-.2-1.4-.8-2c-.8-.8-1.7-.8-2.1-.9C15.4 4 12 4 12 4h0s-3.4 0-6.7.3c-.4 0-1.3.1-2.1.9-.6.6-.8 2-.8 2S2 8.8 2 10.4v1.2c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.9.8 2.4.9 1.7.2 7.6.3 7.6.3s3.4 0 6.7-.3c.4 0 1.3-.1 2.1-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.2c0-1.6-.2-3.2-.2-3.2ZM10 14.9V8.9l5.2 3-5.2 3Z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-summary">
+              <p data-i18n="p1Summary">End-to-end aerial platform—from CAD frame iterations to control firmware—built for harsh weather mapping missions. The twin-tile layout contrasts runtime telemetry with briefing schematics.</p>
+              <ul data-i18n="p1Bullets" data-target-list="true">
+                <li>Composite frame with modular arms stress-tested for 20% overload scenarios.</li>
+                <li>Flight stack integrates PX4 autopilot, lidar altimetry, and RTK corrections for sub-meter accuracy.</li>
+                <li>Scenario-driven demos built in Unity to let stakeholders rehearse inspections before field trials.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="more-projects" aria-label="Additional projects">
+      <div class="section-inner">
+        <article class="project-block" id="proj-marine">
+          <div class="widgets">
+            <div class="media arm-stage">
+              <div class="media-inner">
+                <div class="media-placeholder">Subsurface Sweep</div>
+              </div>
+            </div>
+            <div class="media">
+              <div class="media-inner">
+                <div class="media-placeholder">ROS 2 Mapping</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-header">
+              <h3 data-i18n="pMarineTitle">Marine Vehicle — ROS 2 Jazzy</h3>
+              <div class="project-meta">
+                <a class="project-check" href="https://badawy.dev/projects/marine-vehicle" target="_blank" rel="noopener" data-i18n="pMarineCheck">Check it out</a>
+                <div class="project-resources">
+                  <a class="resource-icon" href="https://github.com/ahmedbadawy/marine-vehicle" target="_blank" rel="noopener" aria-label="GitHub repository">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.15-1.12-1.46-1.12-1.46-.91-.63.07-.62.07-.62 1 .07 1.52 1.05 1.52 1.05.9 1.54 2.36 1.1 2.94.84.09-.66.35-1.1.63-1.35-2.22-.25-4.56-1.11-4.56-4.95 0-1.1.39-2 1.03-2.7-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.45 9.45 0 0 1 5 0c1.9-1.29 2.74-1.02 2.74-1.02.56 1.37.21 2.39.11 2.64.64.7 1.03 1.6 1.03 2.7 0 3.86-2.35 4.7-4.58 4.95.36.31.68.92.68 1.86v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+                  </a>
+                  <a class="resource-icon" href="https://drive.google.com/drive/folders/marine-vehicle" target="_blank" rel="noopener" aria-label="Google Drive folder">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.12 3 2 11.86l3.54 6.14h5.41l-3.54-6.14L10.66 3H7.12Zm6.22 0-3.71 6.43 3.6 6.57H21L17.4 9.57 13.34 3h-.01ZM5.82 20.14 7 22h10l1.18-1.86H5.82Z"/></svg>
+                  </a>
+                  <a class="resource-icon" href="https://www.youtube.com/watch?v=marine-vehicle-demo" target="_blank" rel="noopener" aria-label="YouTube demo">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2s-.2-1.4-.8-2c-.8-.8-1.7-.8-2.1-.9C15.4 4 12 4 12 4h0s-3.4 0-6.7.3c-.4 0-1.3.1-2.1.9-.6.6-.8 2-.8 2S2 8.8 2 10.4v1.2c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.9.8 2.4.9 1.7.2 7.6.3 7.6.3s3.4 0 6.7-.3c.4 0 1.3-.1 2.1-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.2c0-1.6-.2-3.2-.2-3.2ZM10 14.9V8.9l5.2 3-5.2 3Z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-summary">
+              <p data-i18n="pMarineSummary">Autonomous hull-cleaning prototype combining machine vision with redundant inertial guidance. I led the sensor fusion pipeline and hardware bring-up across power-hungry payloads.</p>
+              <ul data-i18n="pMarineBullets" data-target-list="true">
+                <li>Designed brush tooling and sealed housings suitable for brackish water while staying under the thrust budget.</li>
+                <li>Architected ROS 2 nodes for SLAM, optical tracking, and mission control with configurable recovery states.</li>
+                <li>Captured validation runs, logged anomalies, and produced debriefs that informed iterative hull coverage gains.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-block" id="proj-stm32">
+          <div class="widgets">
+            <div class="media arm-stage">
+              <div class="media-inner">
+                <div class="media-placeholder">PCB Layout</div>
+              </div>
+            </div>
+            <div class="media">
+              <div class="media-inner">
+                <div class="media-placeholder">Signal Integrity</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-header">
+              <h3 data-i18n="pSTMTitle">STM32F411 4-Layer Controller</h3>
+              <div class="project-meta">
+                <a class="project-check" href="https://badawy.dev/projects/stm32-controller" target="_blank" rel="noopener" data-i18n="pSTMCheck">Check it out</a>
+                <div class="project-resources">
+                  <a class="resource-icon" href="https://github.com/ahmedbadawy/stm32-controller" target="_blank" rel="noopener" aria-label="GitHub repository">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.15-1.12-1.46-1.12-1.46-.91-.63.07-.62.07-.62 1 .07 1.52 1.05 1.52 1.05.9 1.54 2.36 1.1 2.94.84.09-.66.35-1.1.63-1.35-2.22-.25-4.56-1.11-4.56-4.95 0-1.1.39-2 1.03-2.7-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.45 9.45 0 0 1 5 0c1.9-1.29 2.74-1.02 2.74-1.02.56 1.37.21 2.39.11 2.64.64.7 1.03 1.6 1.03 2.7 0 3.86-2.35 4.7-4.58 4.95.36.31.68.92.68 1.86v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+                  </a>
+                  <a class="resource-icon" href="https://drive.google.com/drive/folders/stm32-controller" target="_blank" rel="noopener" aria-label="Google Drive folder">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.12 3 2 11.86l3.54 6.14h5.41l-3.54-6.14L10.66 3H7.12Zm6.22 0-3.71 6.43 3.6 6.57H21L17.4 9.57 13.34 3h-.01ZM5.82 20.14 7 22h10l1.18-1.86H5.82Z"/></svg>
+                  </a>
+                  <a class="resource-icon" href="https://www.youtube.com/watch?v=stm32-controller-demo" target="_blank" rel="noopener" aria-label="YouTube demo">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2s-.2-1.4-.8-2c-.8-.8-1.7-.8-2.1-.9C15.4 4 12 4 12 4h0s-3.4 0-6.7.3c-.4 0-1.3.1-2.1.9-.6.6-.8 2-.8 2S2 8.8 2 10.4v1.2c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.9.8 2.4.9 1.7.2 7.6.3 7.6.3s3.4 0 6.7-.3c.4 0 1.3-.1 2.1-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.2c0-1.6-.2-3.2-.2-3.2ZM10 14.9V8.9l5.2 3-5.2 3Z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-summary">
+              <p data-i18n="pSTMSummary">Compact sensor hub that mates inertial, magnetic, and absolute encoders over USB-C. Layout emphasises signal integrity while meeting strict fabrication tolerances.</p>
+              <ul data-i18n="pSTMBullets" data-target-list="true">
+                <li>Length-matched high-speed pairs and reference planes tuned for EMI resilience near brushed motors.</li>
+                <li>Bench characterization suite automated via Python + PyVISA to profile drift and noise floors.</li>
+                <li>Released fabrication pack with assembly drawings, BOM, test plan, and firmware bring-up scripts.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-block" id="proj-8051">
+          <div class="widgets">
+            <div class="media arm-stage">
+              <div class="media-inner">
+                <div class="media-placeholder">Retro PWM Rig</div>
+              </div>
+            </div>
+            <div class="media">
+              <div class="media-inner">
+                <div class="media-placeholder">Timing Notes</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-header">
+              <h3 data-i18n="p8051Title">8051 Motor Speed Controller</h3>
+              <div class="project-meta">
+                <a class="project-check" href="https://badawy.dev/projects/8051-controller" target="_blank" rel="noopener" data-i18n="p8051Check">Check it out</a>
+                <div class="project-resources">
+                  <a class="resource-icon" href="https://github.com/ahmedbadawy/8051-speed-controller" target="_blank" rel="noopener" aria-label="GitHub repository">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.15-1.12-1.46-1.12-1.46-.91-.63.07-.62.07-.62 1 .07 1.52 1.05 1.52 1.05.9 1.54 2.36 1.1 2.94.84.09-.66.35-1.1.63-1.35-2.22-.25-4.56-1.11-4.56-4.95 0-1.1.39-2 1.03-2.7-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.45 9.45 0 0 1 5 0c1.9-1.29 2.74-1.02 2.74-1.02.56 1.37.21 2.39.11 2.64.64.7 1.03 1.6 1.03 2.7 0 3.86-2.35 4.7-4.58 4.95.36.31.68.92.68 1.86v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+                  </a>
+                  <a class="resource-icon" href="https://drive.google.com/drive/folders/8051-controller" target="_blank" rel="noopener" aria-label="Google Drive folder">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.12 3 2 11.86l3.54 6.14h5.41l-3.54-6.14L10.66 3H7.12Zm6.22 0-3.71 6.43 3.6 6.57H21L17.4 9.57 13.34 3h-.01ZM5.82 20.14 7 22h10l1.18-1.86H5.82Z"/></svg>
+                  </a>
+                  <a class="resource-icon" href="https://www.youtube.com/watch?v=8051-controller-demo" target="_blank" rel="noopener" aria-label="YouTube demo">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2s-.2-1.4-.8-2c-.8-.8-1.7-.8-2.1-.9C15.4 4 12 4 12 4h0s-3.4 0-6.7.3c-.4 0-1.3.1-2.1.9-.6.6-.8 2-.8 2S2 8.8 2 10.4v1.2c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.9.8 2.4.9 1.7.2 7.6.3 7.6.3s3.4 0 6.7-.3c.4 0 1.3-.1 2.1-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.2c0-1.6-.2-3.2-.2-3.2ZM10 14.9V8.9l5.2 3-5.2 3Z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-summary">
+              <p data-i18n="p8051Summary">Legacy 8051-based PWM driver retrofitted with closed-loop encoder feedback. Educational platform for debugging low-level timing constraints.</p>
+              <ul data-i18n="p8051Bullets" data-target-list="true">
+                <li>Dual 7-segment multiplexing renders telemetry without bloating instruction cycles.</li>
+                <li>Scope-led tuning uncovered timer overflow edge cases later mitigated in documentation.</li>
+                <li>Shared as a teaching kit with annotated schematics and a troubleshooting decision tree.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-block" id="proj-labview">
+          <div class="widgets">
+            <div class="media arm-stage">
+              <div class="media-inner">
+                <div class="media-placeholder">Automation Cell</div>
+              </div>
+            </div>
+            <div class="media">
+              <div class="media-inner">
+                <div class="media-placeholder">Control Logic</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-header">
+              <h3 data-i18n="pLabviewTitle">Automated Widget Assembly</h3>
+              <div class="project-meta">
+                <a class="project-check" href="https://badawy.dev/projects/labview-automation" target="_blank" rel="noopener" data-i18n="pLabviewCheck">Check it out</a>
+                <div class="project-resources">
+                  <a class="resource-icon" href="https://github.com/ahmedbadawy/labview-automation" target="_blank" rel="noopener" aria-label="GitHub repository">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.15-1.12-1.46-1.12-1.46-.91-.63.07-.62.07-.62 1 .07 1.52 1.05 1.52 1.05.9 1.54 2.36 1.1 2.94.84.09-.66.35-1.1.63-1.35-2.22-.25-4.56-1.11-4.56-4.95 0-1.1.39-2 1.03-2.7-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.45 9.45 0 0 1 5 0c1.9-1.29 2.74-1.02 2.74-1.02.56 1.37.21 2.39.11 2.64.64.7 1.03 1.6 1.03 2.7 0 3.86-2.35 4.7-4.58 4.95.36.31.68.92.68 1.86v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+                  </a>
+                  <a class="resource-icon" href="https://drive.google.com/drive/folders/labview-automation" target="_blank" rel="noopener" aria-label="Google Drive folder">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.12 3 2 11.86l3.54 6.14h5.41l-3.54-6.14L10.66 3H7.12Zm6.22 0-3.71 6.43 3.6 6.57H21L17.4 9.57 13.34 3h-.01ZM5.82 20.14 7 22h10l1.18-1.86H5.82Z"/></svg>
+                  </a>
+                  <a class="resource-icon" href="https://www.youtube.com/watch?v=labview-automation-demo" target="_blank" rel="noopener" aria-label="YouTube demo">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2s-.2-1.4-.8-2c-.8-.8-1.7-.8-2.1-.9C15.4 4 12 4 12 4h0s-3.4 0-6.7.3c-.4 0-1.3.1-2.1.9-.6.6-.8 2-.8 2S2 8.8 2 10.4v1.2c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.9.8 2.4.9 1.7.2 7.6.3 7.6.3s3.4 0 6.7-.3c.4 0 1.3-.1 2.1-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.2c0-1.6-.2-3.2-.2-3.2ZM10 14.9V8.9l5.2 3-5.2 3Z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-summary">
+              <p data-i18n="pLabviewSummary">LabVIEW-driven cell orchestrating sensors, conveyors, and pneumatic tooling to demonstrate resilient small-batch automation.</p>
+              <ul data-i18n="pLabviewBullets" data-target-list="true">
+                <li>Fail-safe routines re-queue workpieces during brownouts while preserving traceability.</li>
+                <li>Human-machine interface exposes diagnostics, manual overrides, and trend logging for audits.</li>
+                <li>Documentation packaged for plant engineers to adapt sequence logic to new SKUs.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-block" id="proj-snowplow">
+          <div class="widgets">
+            <div class="media arm-stage">
+              <div class="media-inner">
+                <div class="media-placeholder">Winter Retrofit</div>
+              </div>
+            </div>
+            <div class="media">
+              <div class="media-inner">
+                <div class="media-placeholder">Field Testing</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-header">
+              <h3 data-i18n="pSnowTitle">Custom Snow Plow Conversion</h3>
+              <div class="project-meta">
+                <a class="project-check" href="https://badawy.dev/projects/snow-plow" target="_blank" rel="noopener" data-i18n="pSnowCheck">Check it out</a>
+                <div class="project-resources">
+                  <a class="resource-icon" href="https://github.com/ahmedbadawy/snow-plow" target="_blank" rel="noopener" aria-label="GitHub repository">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.15-1.12-1.46-1.12-1.46-.91-.63.07-.62.07-.62 1 .07 1.52 1.05 1.52 1.05.9 1.54 2.36 1.1 2.94.84.09-.66.35-1.1.63-1.35-2.22-.25-4.56-1.11-4.56-4.95 0-1.1.39-2 1.03-2.7-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.45 9.45 0 0 1 5 0c1.9-1.29 2.74-1.02 2.74-1.02.56 1.37.21 2.39.11 2.64.64.7 1.03 1.6 1.03 2.7 0 3.86-2.35 4.7-4.58 4.95.36.31.68.92.68 1.86v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+                  </a>
+                  <a class="resource-icon" href="https://drive.google.com/drive/folders/snow-plow" target="_blank" rel="noopener" aria-label="Google Drive folder">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.12 3 2 11.86l3.54 6.14h5.41l-3.54-6.14L10.66 3H7.12Zm6.22 0-3.71 6.43 3.6 6.57H21L17.4 9.57 13.34 3h-.01ZM5.82 20.14 7 22h10l1.18-1.86H5.82Z"/></svg>
+                  </a>
+                  <a class="resource-icon" href="https://www.youtube.com/watch?v=snow-plow-demo" target="_blank" rel="noopener" aria-label="YouTube demo">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2s-.2-1.4-.8-2c-.8-.8-1.7-.8-2.1-.9C15.4 4 12 4 12 4h0s-3.4 0-6.7.3c-.4 0-1.3.1-2.1.9-.6.6-.8 2-.8 2S2 8.8 2 10.4v1.2c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.9.8 2.4.9 1.7.2 7.6.3 7.6.3s3.4 0 6.7-.3c.4 0 1.3-.1 2.1-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.2c0-1.6-.2-3.2-.2-3.2ZM10 14.9V8.9l5.2 3-5.2 3Z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-summary">
+              <p data-i18n="pSnowSummary">Ride-on mower transformation into a winter-ready plow. Fabrication sprint mixing TIG welding, drivetrain tuning, and ergonomic field testing.</p>
+              <ul data-i18n="pSnowBullets" data-target-list="true">
+                <li>Engineered hydraulic steering linkages to survive repetitive shocks without service downtime.</li>
+                <li>Optimized blade geometry with CFD approximations to reduce clogging and throw snow cleanly.</li>
+                <li>Produced step-by-step retrofit manual and maintenance schedule for owner adoption.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-block" id="proj-diagram">
+          <div class="widgets">
+            <div class="media arm-stage">
+              <div class="media-inner">
+                <div class="media-placeholder">AI Canvas</div>
+              </div>
+            </div>
+            <div class="media">
+              <div class="media-inner">
+                <div class="media-placeholder">Research Briefs</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-header">
+              <h3 data-i18n="pDiagramTitle">Diagram Weaver (AI)</h3>
+              <div class="project-meta">
+                <a class="project-check" href="https://badawy.dev/projects/diagram-weaver" target="_blank" rel="noopener" data-i18n="pDiagramCheck">Check it out</a>
+                <div class="project-resources">
+                  <a class="resource-icon" href="https://github.com/ahmedbadawy/diagram-weaver" target="_blank" rel="noopener" aria-label="GitHub repository">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.15-1.12-1.46-1.12-1.46-.91-.63.07-.62.07-.62 1 .07 1.52 1.05 1.52 1.05.9 1.54 2.36 1.1 2.94.84.09-.66.35-1.1.63-1.35-2.22-.25-4.56-1.11-4.56-4.95 0-1.1.39-2 1.03-2.7-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.45 9.45 0 0 1 5 0c1.9-1.29 2.74-1.02 2.74-1.02.56 1.37.21 2.39.11 2.64.64.7 1.03 1.6 1.03 2.7 0 3.86-2.35 4.7-4.58 4.95.36.31.68.92.68 1.86v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+                  </a>
+                  <a class="resource-icon" href="https://drive.google.com/drive/folders/diagram-weaver" target="_blank" rel="noopener" aria-label="Google Drive folder">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.12 3 2 11.86l3.54 6.14h5.41l-3.54-6.14L10.66 3H7.12Zm6.22 0-3.71 6.43 3.6 6.57H21L17.4 9.57 13.34 3h-.01ZM5.82 20.14 7 22h10l1.18-1.86H5.82Z"/></svg>
+                  </a>
+                  <a class="resource-icon" href="https://www.youtube.com/watch?v=diagram-weaver-demo" target="_blank" rel="noopener" aria-label="YouTube demo">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2s-.2-1.4-.8-2c-.8-.8-1.7-.8-2.1-.9C15.4 4 12 4 12 4h0s-3.4 0-6.7.3c-.4 0-1.3.1-2.1.9-.6.6-.8 2-.8 2S2 8.8 2 10.4v1.2c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.9.8 2.4.9 1.7.2 7.6.3 7.6.3s3.4 0 6.7-.3c.4 0 1.3-.1 2.1-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.2c0-1.6-.2-3.2-.2-3.2ZM10 14.9V8.9l5.2 3-5.2 3Z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-summary">
+              <p data-i18n="pDiagramSummary">Research companion that blends AI-assisted ideation with semantic search for design teams under deadline pressure.</p>
+              <ul data-i18n="pDiagramBullets" data-target-list="true">
+                <li>Diagram Bot drafts multi-view schematics that engineers fine-tune instead of starting from scratch.</li>
+                <li>Genie assistant curates research snippets, citations, and data provenance in a single brief.</li>
+                <li>Responsive canvas supports live collaboration with latency-optimized WebSocket syncing.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-inner">
+        <h2 class="section-title" data-i18n="exp">Experience</h2>
+        <div class="project-card timeline" id="timeline">
+          <div class="t-item">
+            <span class="t-dot"></span>
+            <div class="t-meta">Robotics R&amp;D — <strong>MarineTech Labs</strong> — <em>2023–2025</em></div>
+            <div class="t-title">Autonomous hull-cleaning robot — vision &amp; guidance</div>
+            <p>Built a redundant visual line tracker; tuned thresholds and smoothing for reliable underwater detection; contributed to field trials and reporting.</p>
+          </div>
+          <div class="t-item">
+            <span class="t-dot"></span>
+            <div class="t-meta">Embedded Systems — <strong>Open Robotics Collective</strong> — <em>2022–2023</em></div>
+            <div class="t-title">STM32 / Raspberry&nbsp;Pi — sensor benches</div>
+            <p>Test plans and wiring diagrams for encoders and optical sensors; firmware bring-up; latency profiling.</p>
+          </div>
+          <div class="t-item">
+            <span class="t-dot"></span>
+            <div class="t-meta">System Design — <strong>TechWorks Studio</strong> — <em>2021–2022</em></div>
+            <div class="t-title">Sensor trade study &amp; BOM optimization</div>
+            <p>Compared sonar, ultrasonic, and IMU options; selected vendors; reduced cost 18% while meeting range/noise targets.</p>
+          </div>
+          <div class="t-item">
+            <span class="t-dot"></span>
+            <div class="t-meta">Leadership — <strong>VEX / DJI Teams</strong> — <em>2019–2021</em></div>
+            <div class="t-title">Team lead — multi-discipline projects</div>
+            <p>Coached mechanical, electrical, and operations streams for a 10-person team; organized demos and reviews.</p>
+          </div>
+          <div class="t-item">
+            <span class="t-dot"></span>
+            <div class="t-meta">Prototyping — <strong>Independent</strong> — <em>2018–2019</em></div>
+            <div class="t-title">Service arm end-effector</div>
+            <p>Iterated a gripper; documented procedures and specs; created maintenance guidelines.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resources">
+      <div class="section-inner">
+        <h2 class="section-title" data-i18n="res">Resources</h2>
+        <div class="project-card">
+          <p data-i18n="resDesc">Curated tools and references I use regularly.</p>
+          <div class="link-grid">
+            <a class="link-pill" href="https://threejs.org/editor/" target="_blank" rel="noopener">Three.js Editor<span>↗</span></a>
+            <a class="link-pill" href="https://spline.design/" target="_blank" rel="noopener">Spline 3D<span>↗</span></a>
+            <a class="link-pill" href="https://blender.org/" target="_blank" rel="noopener">Blender<span>↗</span></a>
+            <a class="link-pill" href="https://www.onshape.com/en/" target="_blank" rel="noopener">Onshape CAD<span>↗</span></a>
+            <a class="link-pill" href="https://github.com/" target="_blank" rel="noopener">GitHub<span>↗</span></a>
+            <a class="link-pill" href="https://www.figma.com/" target="_blank" rel="noopener">Figma<span>↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-inner">
+        <h2 class="section-title" data-i18n="abt">About</h2>
+        <div class="grid">
+          <div class="project-card">
+            <h3>Ahmed Badawy</h3>
+            <p data-i18n="aboutP">I build interactive robotics experiences and polished product websites. My work blends performance, accessibility, and delightful motion.</p>
+          </div>
+          <div class="project-card" style="display:flex;align-items:center;justify-content:center;">
+            <img src="assets/images/ahmed-badawy-profile.svg" alt="Portrait of Ahmed Badawy" class="avatar" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume">
+      <div class="section-inner">
+        <h2 class="section-title" data-i18n="cv">Resume</h2>
+        <div class="project-card">
+          <p data-i18n="cvdesc">View or download my resume.</p>
+          <div class="btn-row">
+            <a class="btn" href="/resume.pdf" target="_blank" rel="noopener" data-i18n="openPdf">Open PDF</a>
+            <a class="btn" href="/resume.pdf" download data-i18n="download">Download</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <span data-i18n="copyright">© 2025 Ahmed Badawy</span>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:hello@example.com">Email</a>
+    </div>
+  </footer>
+</body>
+</html>
