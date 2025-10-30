@@ -87,6 +87,78 @@ const experience = [
                 period: '2013 — 2017',
                 details:
                         'Delivered modernization projects across finance and health portfolios with a focus on accessibility and resilient architecture.',
+
+const projects = [
+        {
+                title: 'Compass Banking App',
+                summary:
+                        'Led a year-long redesign that reduced onboarding friction, aligned the product with accessibility standards, and unlocked a 26% lift in mobile engagement.',
+                outcome: 'Result · 71% of new accounts were opened on mobile post-launch.',
+                tags: ['Design Strategy', 'Design Systems', 'UX Research'],
+                link: '/blog/compass-banking-app/',
+        },
+        {
+                title: 'Pathfinder Travel Platform',
+                summary:
+                        'Crafted an end-to-end booking flow optimized for group travel. Prototyped, tested with 42 travelers, and partnered with engineering to deliver the MVP in 12 weeks.',
+                outcome: 'Result · Checkout completion increased by 33% within the first month.',
+                tags: ['Product Design', 'Prototyping', 'User Testing'],
+                link: '/blog/pathfinder-travel-platform/',
+        },
+        {
+                title: 'Atlas Dashboard Modernization',
+                summary:
+                        'Defined the visual language, information architecture, and data visualization standards for a complex analytics dashboard used by enterprise teams.',
+                outcome: 'Result · Support tickets dropped by 48% as teams gained clarity into their metrics.',
+                tags: ['Information Architecture', 'Design Ops', 'Data Visualization'],
+                link: '/blog/atlas-dashboard-modernization/',
+        },
+];
+
+const services = [
+        {
+                title: 'Product Design Leadership',
+                description:
+                        'Fractional design leadership that clarifies product vision, rallies cross-functional teams, and keeps execution focused on measurable outcomes.',
+        },
+        {
+                title: 'Experience Strategy Sprints',
+                description:
+                        'Two-week engagements to uncover insights, map opportunity areas, and deliver customer journeys that drive roadmap alignment.',
+        },
+        {
+                title: 'Design Systems & Ops',
+                description:
+                        'Build scalable systems, rituals, and tooling so teams ship faster without sacrificing craft or accessibility.',
+        },
+        {
+                title: 'Inclusive Research & Testing',
+                description:
+                        'Conduct moderated studies, synthesize findings, and coach teams on inclusive research practices that broaden reach.',
+        },
+];
+
+const experience = [
+        {
+                role: 'Principal Product Designer',
+                company: 'Lumina Health',
+                period: '2021 — Present',
+                details:
+                        'Own the patient experience across mobile and web. Partner with product and engineering to ship outcomes-focused solutions for chronic care.',
+        },
+        {
+                role: 'Design Lead',
+                company: 'Northwind Labs',
+                period: '2017 — 2021',
+                details:
+                        'Scaled a design practice from 2 to 14 while delivering enterprise AI tools for operations teams across manufacturing and logistics.',
+        },
+        {
+                role: 'Senior UX Designer',
+                company: 'Brightside',
+                period: '2013 — 2017',
+                details:
+                        'Shipped growth experiments, brand refreshes, and a customer support platform that improved NPS by 19 points.',
         },
 ];
 
@@ -100,6 +172,13 @@ const testimonials = [
         {
                 quote:
                         'We rebuilt our CI/CD with Ahmed in the lead. Deploy frequency jumped 5x, and our error budget is still intact six months later.',
+                        'Jordan guided our product strategy through a pivotal pivot. Their ability to connect research to roadmaps helped us hit product-market fit within two quarters.',
+                name: 'Casey Nguyen',
+                title: 'VP Product, Lumina Health',
+        },
+        {
+                quote:
+                        'The design system Jordan delivered became the connective tissue between design and engineering. We ship faster and with more confidence.',
                 name: 'Priya Desai',
                 title: 'Director of Engineering, Northwind Labs',
         },
@@ -118,6 +197,14 @@ const tools = [
         'Kubernetes',
         'Grafana',
         'WebGL',
+        'Figma',
+        'Penpot',
+        'Miro',
+        'Lookback',
+        'Notion',
+        'Storybook',
+        'Dovetail',
+        'Webflow',
 ];
 ---
 
@@ -148,6 +235,26 @@ const tools = [
                                                 center / cover no-repeat;
                                 transform: scale(1.05);
                                 filter: saturate(1.1);
+                        main {
+                                width: 100%;
+                                margin: 0;
+                                padding: 0;
+                        }
+                        .hero {
+                                position: relative;
+                                width: 100vw;
+                                margin: 0 calc(50% - 50vw);
+                                min-height: min(88vh, 760px);
+                                padding: clamp(6rem, 12vw, 9rem) clamp(1.5rem, 10vw, 6rem) clamp(6rem, 10vw, 8rem);
+                                display: flex;
+                                align-items: center;
+                                justify-content: flex-start;
+                                color: rgba(255, 255, 255, 0.88);
+                                background:
+                                        linear-gradient(135deg, rgba(4, 7, 22, 0.92) 0%, rgba(15, 23, 42, 0.45) 45%, rgba(2, 6, 23, 0.92) 100%),
+                                        url('https://images.unsplash.com/photo-1588436706487-9d55d73a39e3?auto=format&fit=crop&w=2400&q=80')
+                                                center / cover no-repeat;
+                                overflow: hidden;
                         }
                         .hero::after {
                                 content: '';
@@ -443,6 +550,153 @@ const tools = [
                                 }
                                 .hero__lede {
                                         font-size: 1.05rem;
+                                background: radial-gradient(circle at 10% 10%, rgba(59, 130, 246, 0.25), transparent 45%),
+                                        radial-gradient(circle at 90% 20%, rgba(56, 189, 248, 0.2), transparent 40%);
+                                mix-blend-mode: screen;
+                                opacity: 0.85;
+                        }
+                        .hero__content {
+                                position: relative;
+                                max-width: min(640px, 90%);
+                                z-index: 1;
+                        }
+                        .hero__content h1 {
+                                margin-bottom: 1.5rem;
+                                color: #fff;
+                                font-size: clamp(3rem, 6vw, 4.75rem);
+                                letter-spacing: -0.02em;
+                        }
+                        .hero__content p {
+                                font-size: 1.2rem;
+                                color: rgba(255, 255, 255, 0.78);
+                                max-width: 52ch;
+                        }
+                        .hero .eyebrow {
+                                color: rgba(255, 255, 255, 0.65);
+                                letter-spacing: 0.24em;
+                                margin-bottom: 1.25rem;
+                        }
+                        .hero-actions {
+                                display: flex;
+                                gap: 1rem;
+                                flex-wrap: wrap;
+                                margin-top: 2.5rem;
+                        }
+                        .hero .button {
+                                box-shadow: 0 24px 45px rgba(37, 99, 235, 0.3);
+                        }
+                        .hero .button--ghost {
+                                color: #fff;
+                                box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.6);
+                        }
+                        .hero .button--ghost:hover {
+                                background: rgba(255, 255, 255, 0.18);
+                                color: #fff;
+                        }
+                        .page-sections {
+                                width: min(1100px, calc(100% - 2rem));
+                                margin: -4.5rem auto 0;
+                                padding: 0 0 5rem;
+                                display: grid;
+                                gap: 4rem;
+                        }
+                        .page-sections .section {
+                                margin: 0;
+                                padding: clamp(2.5rem, 6vw, 3.5rem);
+                                background: white;
+                                border-radius: 28px;
+                                box-shadow: var(--box-shadow);
+                        }
+                        .projects-grid {
+                                margin-top: 2rem;
+                        }
+                        .project-card {
+                                display: grid;
+                                gap: 1.25rem;
+                                background: white;
+                                border-radius: 22px;
+                                padding: 2.5rem;
+                                box-shadow: var(--box-shadow);
+                        }
+                        .project-card h3 {
+                                margin: 0;
+                        }
+                        .project-card .tag {
+                                margin-right: 0.5rem;
+                        }
+                        .project-meta {
+                                display: flex;
+                                flex-wrap: wrap;
+                                gap: 0.5rem;
+                                margin-top: -0.25rem;
+                        }
+                        .services-grid {
+                                margin-top: 2rem;
+                        }
+                        .services-grid .card {
+                                min-height: 220px;
+                        }
+                        .tools-panel {
+                                background: white;
+                                border-radius: 20px;
+                                padding: 2rem;
+                                box-shadow: var(--box-shadow);
+                                display: grid;
+                                gap: 1.25rem;
+                        }
+                        .timeline {
+                                margin-top: 2rem;
+                        }
+                        .testimonials {
+                                margin-top: 2rem;
+                                display: grid;
+                                gap: 2rem;
+                                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                        }
+                        .writing-grid {
+                                margin-top: 2rem;
+                                display: grid;
+                                gap: 2rem;
+                                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                        }
+                        .writing-card {
+                                background: white;
+                                border-radius: 18px;
+                                padding: 2rem;
+                                box-shadow: var(--box-shadow);
+                                display: grid;
+                                gap: 1rem;
+                        }
+                        .writing-card h3 {
+                                margin: 0;
+                        }
+                        .writing-card a {
+                                text-decoration: none;
+                                color: inherit;
+                        }
+                        .writing-card a:hover h3 {
+                                color: var(--accent);
+                        }
+                        .writing-card time {
+                                color: rgb(var(--gray));
+                                font-size: 0.95rem;
+                        }
+                        .writing-card p {
+                                color: rgb(var(--gray));
+                        }
+                        @media (max-width: 900px) {
+                                .hero {
+                                        min-height: 75vh;
+                                }
+                        }
+                        @media (max-width: 720px) {
+                                .hero {
+                                        padding: 6rem 1.5rem 4rem;
+                                        text-align: center;
+                                        justify-content: center;
+                                }
+                                .hero__content {
+                                        margin: 0 auto;
                                 }
                                 .hero-actions {
                                         justify-content: center;
@@ -452,6 +706,9 @@ const tools = [
                                 }
                                 .card-section {
                                         padding: 2rem;
+                                .page-sections {
+                                        margin-top: -3rem;
+                                        gap: 3rem;
                                 }
                         }
                 </style>
@@ -656,6 +913,144 @@ const tools = [
                                                                 <time datetime={post.data.pubDate.toISOString()}>
                                                                         {post.data.pubDate.toLocaleDateString('en-US', {
                                                                                 month: 'short',
+                <main>
+                        <section class="hero">
+                                <div class="hero__content">
+                                        <p class="eyebrow">Jordan Mitchell · Product Designer</p>
+                                        <h1>Hi, I&rsquo;m Jordan Mitchell.</h1>
+                                        <p>
+                                                I&rsquo;m an inclusive product design leader focused on aerospace, health, and mission-critical
+                                                tools. I translate complex systems into intuitive experiences that help teams move faster and
+                                                make better decisions.
+                                        </p>
+                                        <div class="hero-actions">
+                                                <a class="button" href="#work">View work</a>
+                                                <a class="button button--ghost" href="mailto:hello@jordanmitchell.design">Get in touch</a>
+                                        </div>
+                                </div>
+                        </section>
+
+                        <div class="page-sections">
+                                <section id="work" class="section">
+                                        <div class="section-intro">
+                                                <p class="eyebrow">Selected work</p>
+                                                <h2>Recent outcomes from embedded partnerships.</h2>
+                                        <p>
+                                                Each engagement blends research, prototyping, and facilitation to reduce uncertainty.
+                                                Dive into the full case studies for a look at the process, decisions, and measurable
+                                                impact.
+                                        </p>
+                                </div>
+                                <div class="projects-grid grid grid--two">
+                                        {projects.map((project) => (
+                                                <article class="project-card">
+                                                        <header>
+                                                                <h3>{project.title}</h3>
+                                                                <p>{project.summary}</p>
+                                                        </header>
+                                                        <p><strong>{project.outcome}</strong></p>
+                                                        <div class="project-meta">
+                                                                {project.tags.map((tag) => (
+                                                                        <span class="tag">{tag}</span>
+                                                                ))}
+                                                        </div>
+                                                        <a class="link-arrow" href={project.link}
+                                                                >Read the case study
+                                                                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                                                                        <path
+                                                                                fill="currentColor"
+                                                                                d="M13.172 12 8.222 7.05l1.414-1.414L16 12l-6.364 6.364-1.414-1.414z"
+                                                                        />
+                                                                </svg>
+                                                        </a>
+                                                </article>
+                                        ))}
+                                </div>
+                                </section>
+
+                                <section id="services" class="section">
+                                        <div class="section-intro">
+                                                <p class="eyebrow">How we can collaborate</p>
+                                                <h2>Flexible engagements tailored to your stage.</h2>
+                                        <p>
+                                                Whether you need a thought partner to shape vision or an embedded leader to ship the
+                                                next release, we can design an engagement that meets you where you are.
+                                        </p>
+                                </div>
+                                <div class="services-grid grid grid--two">
+                                        {services.map((service) => (
+                                                <div class="card">
+                                                        <h3>{service.title}</h3>
+                                                        <p>{service.description}</p>
+                                                </div>
+                                        ))}
+                                </div>
+                                <div class="tools-panel">
+                                        <h3>Tools in heavy rotation</h3>
+                                        <div class="badge-list">
+                                                {tools.map((tool) => (
+                                                        <span class="tag">{tool}</span>
+                                                ))}
+                                        </div>
+                                </div>
+                                </section>
+
+                                <section class="section">
+                                        <div class="section-intro">
+                                                <p class="eyebrow">Experience</p>
+                                                <h2>Over a decade guiding teams from vision to launch.</h2>
+                                        <p>
+                                                Collaboration is my favorite tool. I create clarity, document decisions, and invite the
+                                                right voices into the room at the right moment.
+                                        </p>
+                                </div>
+                                <div class="timeline">
+                                        {experience.map((item) => (
+                                                <article class="timeline__item">
+                                                        <h3>{item.role}</h3>
+                                                        <p><strong>{item.company}</strong> · {item.period}</p>
+                                                        <p>{item.details}</p>
+                                                </article>
+                                        ))}
+                                </div>
+                                </section>
+
+                                <section class="section">
+                                        <div class="section-intro">
+                                                <p class="eyebrow">Praise</p>
+                                                <h2>Trusted by product leaders across industries.</h2>
+                                        <p>
+                                                Partnerships are personal. These teams invited me in when the stakes were high — here’s
+                                                what they had to say about the collaboration.
+                                        </p>
+                                </div>
+                                <div class="testimonials">
+                                        {testimonials.map((item) => (
+                                                <blockquote class="testimonial">
+                                                        <p>“{item.quote}”</p>
+                                                        <cite>{item.name}</cite>
+                                                        <span>{item.title}</span>
+                                                </blockquote>
+                                        ))}
+                                </div>
+                                </section>
+
+                                <section id="writing" class="section">
+                                        <div class="section-intro">
+                                                <p class="eyebrow">Latest writing</p>
+                                                <h2>Notes on process, leadership, and inclusive design.</h2>
+                                        <p>
+                                                Long-form reflections on the craft of building products. Subscribe to the RSS feed to
+                                                get new posts in your reader of choice.
+                                        </p>
+                                </div>
+                                <div class="writing-grid">
+                                        {featuredPosts.map((post) => (
+                                                <article class="writing-card">
+                                                        <a href={`/blog/${post.id}/`}>
+                                                                <time datetime={post.data.pubDate.toISOString()}>
+                                                                        {post.data.pubDate.toLocaleDateString('en-US', {
+                                                                                month: 'long',
                                                                                 day: 'numeric',
                                                                                 year: 'numeric',
                                                                         })}
@@ -677,6 +1072,11 @@ const tools = [
                                                 </p>
                                                 <a class="button" href="mailto:hello@ahmed.dev">hello@ahmed.dev</a>
                                                 <span>Based in Seattle · Remote-friendly across GMT-8 to GMT-2</span>
+                                                                <h3>{post.data.title}</h3>
+                                                                <p>{post.data.description}</p>
+                                                        </a>
+                                                </article>
+                                        ))}
                                         </div>
                                 </section>
                         </div>
