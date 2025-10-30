@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="title">A Project By Ahmed Badawy</title>
+  <style>
+    /* Fonts (optional local hosting) */
+    @font-face{font-family:studiofeixen-variable;src:url(/fonts/studio-feixen-sans-variable.woff2) format("woff2"),url(/fonts/studio-feixen-sans-variable.ttf) format("truetype");font-weight:400;font-style:normal}
+    @font-face{font-family:studiofeixen;src:url(/fonts/StudioFeixenSans-Bold.woff2) format("woff2"),url(/fonts/StudioFeixenSans-Bold.woff) format("woff"),url(/fonts/StudioFeixenSans-Bold.ttf) format("truetype");font-weight:700;font-style:normal}
+    @font-face{font-family:studiofeixen;src:url(/fonts/StudioFeixenSans-Medium.woff2) format("woff2"),url(/fonts/StudioFeixenSans-Medium.woff) format("woff"),url(/fonts/StudioFeixenSans-Medium.ttf) format("truetype");font-weight:500;font-style:normal}
+    @font-face{font-family:studiofeixen;src:url(/fonts/StudioFeixenSans-Regular.woff2) format("woff2"),url(/fonts/StudioFeixenSans-Regular.woff) format("woff"),url(/fonts/StudioFeixenSans-Regular.ttf) format("truetype");font-weight:400;font-style:normal}
+    @font-face{font-family:studiofeixen-writer;src:url(/fonts/StudioFeixenSansWriter-Regular.woff2) format("woff2"),url(/fonts/StudioFeixenSansWriter-Regular.woff) format("woff"),url(/fonts/StudioFeixenSansWriter-Regular.ttf) format("truetype");font-weight:400;font-style:normal}
+
+    :root {
+      --accentColor: #b1383e;            /* red tiles */
+      --accentColorDark: #e7a3a7;
+      --bg: #2b2b33;
+      --bg-2: #1f222a;
+      --color: #f3f2f9;
+      --muted: #aab1bf;
+      --gutter: clamp(16px, 5vw, 120px);
+      --gutter-inset: 24px;
+      --top: clamp(96px, 12vh, 200px);
+      --radius: 48px;
+      --border: 2px;
+      --card: #202734;
+      --content-max: 1280px;
+    }
+    html[data-theme="light"] { --bg:#f7f8fb; --bg-2:#ffffff; --color:#222734; --muted:#6b7285; --card:#ffffff; --accentColorDark:#9c4348; }
+    * { box-sizing: border-box; margin:0; padding:0; }
+    html, body {
+      background: radial-gradient(1200px 1200px at 15% 10%, rgba(255,255,255,.06), transparent 40%),
+                  radial-gradient(1200px 1200px at 85% 90%, rgba(0,0,0,.45), transparent 55%),
+                  linear-gradient(180deg, var(--bg), var(--bg-2));
+      color: var(--color);
+      font-family: studiofeixen-variable, studiofeixen, Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    }
+    /* Light theme removes corner shadow and sharpens text */
+    html[data-theme="light"] body{ background: linear-gradient(180deg, var(--bg), var(--bg-2)); }
+    html[data-theme="light"] h1, html[data-theme="light"] h2, html[data-theme="light"] h3, html[data-theme="light"] .tile span{ color:#1e2433; }
+    html[data-theme="light"] .noise{ opacity:.08; }
+    body {
+      background: radial-gradient(1200px 1200px at 15% 10%, rgba(255,255,255,.06), transparent 40%),
+                  radial-gradient(1200px 1200px at 85% 90%, rgba(0,0,0,.45), transparent 55%),
+                  linear-gradient(180deg, var(--bg), var(--bg-2));
+      color: var(--color);
+      font-family: studiofeixen-variable, studiofeixen, Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== Header ===== */
+    header { position: fixed; top: 12px; left:0; right:0; height:64px; display:flex; align-items:center; justify-content:space-between; padding:0 var(--gutter); z-index:40; max-width:var(--content-max); margin-inline:auto; pointer-events:none; }
+    header .brand { display:flex; gap:10px; align-items:center; font-weight:800; letter-spacing:-.02em; pointer-events:auto; }
+    .brand-dot{ width:12px; height:12px; border-radius:999px; background:#78ffd1; box-shadow:0 0 12px rgba(120,255,209,.6); }
+    .header-actions{ display:flex; gap:10px; align-items:center; pointer-events:auto; }
+    .btn{ border:var(--border) solid currentColor; background:transparent; border-radius:999px; padding:12px 18px; cursor:pointer; font-weight:700; line-height:1; }
+
+    /* ===== Overlay menu (clean) ===== */
+    .overlay{ position:fixed; inset:0; background:var(--accentColor); color:#fff; transform:translateY(-100%); transition:transform .4s cubic-bezier(.22,1,.36,1); z-index:50; display:grid; grid-template-rows:auto 1fr auto; }
+    .overlay.open{ transform:translateY(0); }
+    .overlay .nav-head{ display:flex; align-items:center; justify-content:space-between; padding: 20px var(--gutter); max-width:var(--content-max); margin-inline:auto; }
+    .overlay nav{ max-width:var(--content-max); margin:0 auto; padding: 12px var(--gutter) 28px; display:grid; gap:6px; align-content:center; }
+    .overlay nav a{ display:block; font-weight:900; font-size:clamp(28px,5vw,56px); letter-spacing:.02em; padding:8px 0; }
+    .overlay .social{ max-width:var(--content-max); margin:0 auto 40px; padding: 0 var(--gutter); display:flex; gap:18px; flex-wrap:wrap; opacity:.9; }
+
+    /* ===== Hero ===== */
+    .hero-wrap{ width:100%; height:clamp(420px,65vh,720px); position:relative; padding:0 var(--gutter); max-width:var(--content-max); margin-inline:auto; margin-top:var(--top); }
+    .hero{ position:absolute; inset:0; border-radius:0 0 var(--radius) var(--radius); background:var(--accentColor); display:grid; place-items:center; overflow:hidden; box-shadow:0 60px 120px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.08); }
+    .hero::before{ content:""; position:absolute; inset:0; background: radial-gradient(90% 90% at 50% 40%, rgba(255,255,255,.08), rgba(0,0,0,.5)); mix-blend-mode:multiply; opacity:.9; }
+    .hero::after{ content:""; position:absolute; inset:0; opacity:.18; mix-blend-mode:overlay; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size:220px 220px; }
+    .hero svg{ opacity:.9; }
+
+    h1.hero-title{ color:var(--accentColorDark); margin: 16px var(--gutter) 0; text-transform:uppercase; font-variation-settings:"wght" 800, "wdth" 125; font-size: clamp(40px, 8vw, 88px); line-height:.9; letter-spacing:.01em; max-width:var(--content-max); margin-inline:auto; }
+
+    /* ===== Quick links (second red block -> 4 tiles) ===== */
+    #quick{ padding:40px 0 20px; }
+    #quick .inner{ max-width:var(--content-max); margin-inline:auto; padding:0 var(--gutter); display:grid; grid-template-columns: repeat(4, 1fr); gap:20px; }
+    @media (max-width: 980px){ #quick .inner{ grid-template-columns: 1fr 1fr; } }
+    .tile{ background:var(--accentColor); color:#fff; border-radius:28px; padding:24px; box-shadow:0 30px 60px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.08); display:flex; align-items:end; justify-content:space-between; min-height:120px; }
+    .tile span{ font-weight:900; font-size:clamp(18px,2.2vw,28px); letter-spacing:.06em; text-transform:uppercase; }
+
+    /* ===== Sections ===== */
+    section{ position:relative; z-index:1; }
+    .section-inner{ max-width:var(--content-max); margin-inline:auto; padding: 64px var(--gutter) 0; }
+
+    /* ===== Projects (stacked widgets per project) ===== */
+    #projects{ padding: 80px 0 120px; }
+.section-title{ font-size: clamp(32px, 6vw, 64px); letter-spacing:.06em; text-transform: uppercase; color: var(--accentColorDark); margin-bottom: 18px; line-height: 1; }
+    .project-block{ display:grid; gap:18px; margin-bottom:44px; }
+    .widgets{ display:grid; grid-template-columns: 1fr 1fr; gap:16px; align-items:stretch; }
+    .media{ background: var(--accentColor); color:#fff; border-radius: 28px; min-height: clamp(300px, 50vh, 560px); position:relative; overflow:hidden; display:grid; place-items:center; box-shadow: 0 40px 80px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.08); }
+    .media::before{ content:""; position:absolute; inset:-20%; background: radial-gradient(85% 85% at 50% 50%, rgba(255,255,255,.06) 0%, rgba(0,0,0,.18) 60%, rgba(0,0,0,.55) 100%); pointer-events:none; mix-blend-mode:multiply; opacity:.8; }
+    .media::after{ content:""; position:absolute; inset:0; pointer-events:none; opacity:.08; mix-blend-mode:overlay; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size:220px 220px; }
+    /* Dark 3D area */
+    .media.arm-stage{ background: radial-gradient(600px 600px at 50% 10%, rgba(255,255,255,.05), rgba(0,0,0,.35)), linear-gradient(180deg,#1f232c,#171a22); }
+/* 3D arm base pieces (restored) */
+.arm{ position:absolute; top:50%; left:50%; transform-style:preserve-3d; transform: translate(-50%,-20%) rotateX(18deg); }
+.part{ position:absolute; left:0; top:0; transform-style:preserve-3d; }
+.box{ position:absolute; left:0; top:0; width:200px; height:28px; background: linear-gradient(90deg,#8b93a8,#b7becc); transform: translateZ(0); border-radius: 8px; box-shadow: 0 12px 28px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.25); }
+.joint{ width:38px; height:38px; border-radius:999px; background: radial-gradient(circle at 40% 40%, #e7a3a7, #b1383e); box-shadow: 0 10px 24px rgba(0,0,0,.45); position:absolute; left:-18px; top:-5px; }
+.base{ transform: translate3d(-80px, 120px, 0) rotateZ(0deg); }
+.upper{ transform: translate3d(180px, 0, 0) rotateZ(0deg); }
+.fore{ transform: translate3d(200px, 0, 0) rotateZ(0deg); }
+.wrist{ transform: translate3d(200px, 0, 0) rotateZ(0deg); }
+.claw{ transform: translate3d(180px, -2px, 0) rotateZ(10deg); }
+.tip{ width:18px; height:18px; border-radius:4px; background:#78ffd1; position:absolute; left:182px; top:4px; box-shadow:0 0 16px rgba(120,255,209,.9); }
+
+
+    /* Ensure stacked widgets never overlap */
+    #armStage{ position:relative; }
+    #armStage .arm-orbit{ width:100%; height:100%; transform-style:preserve-3d; }
+    .project-block .widgets > .media{ position:relative; z-index:0; }
+    .project-block .widgets{ display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
+
+    .content-card{ background:var(--card); border-radius:28px; padding: clamp(18px, 2.2vw, 28px); border: var(--border) solid rgba(255,255,255,.08); box-shadow: 0 30px 60px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.03); }
+    .content-card h3{ text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px; color:#f0cfd3; } 
+
+    /* Resources grid */
+    .link-grid{ display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:16px; margin-top:12px; }
+    @media (max-width:980px){ .link-grid{ grid-template-columns: 1fr 1fr; } }
+    .link-pill{ display:flex; align-items:center; justify-content:space-between; padding:14px 16px; border-radius:14px; background:rgba(255,255,255,.04); border:var(--border) solid rgba(255,255,255,.08); font-weight:700; }
+
+    /* ===== About & Contact ===== */
+    #about .grid{ display:grid; grid-template-columns: 1.2fr 1fr; gap:20px; }
+    @media (max-width:980px){ #about .grid{ grid-template-columns:1fr; } }
+    .avatar{ width:220px; height:220px; border-radius:999px; object-fit:cover; box-shadow:0 10px 30px rgba(0,0,0,.45), inset 0 0 0 6px rgba(255,255,255,.08) }
+
+    footer.site{ margin-top: 80px; padding: 32px var(--gutter) 60px; border-top:var(--border) solid rgba(255,255,255,.08); max-width:var(--content-max); margin-inline:auto; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+    footer .social-links{ display:flex; gap:16px; }
+
+    /* Background noise behind content */
+    .noise{position:fixed;inset:-300% -150% auto auto;height:600%;width:600%;animation:grain 7s steps(10) infinite;opacity:.22;pointer-events:none;z-index:-3;background-size:200px;background-repeat:repeat;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cfilter id='g'%3E%3CfeTurbulence baseFrequency='0.75' numOctaves='3' type='fractalNoise'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E")}
+    @keyframes grain{0%,100%{transform:translate(0)}10%{transform:translate(-5%,-10%)}20%{transform:translate(-15%,5%)}30%{transform:translate(7%,-25%)}40%{transform:translate(-5%,25%)}50%{transform:translate(-15%,10%)}60%{transform:translate(15%,0)}70%{transform:translate(0,15%)}80%{transform:translate(3%,35%)}90%{transform:translate(-10%,10%)}}
+  @media (max-width: 980px){ .widgets{ grid-template-columns: 1fr; } }
+    /* Prevent horizontal scroll */
+    html, body { overflow-x:hidden; }
+  </style>
+</head>
+<body class="dark">
+  <!-- cursor + progress (unchanged) -->
+  <div class="cursor-dot" id="cursor"></div>
+  <div class="cursor" id="cursorLg"></div>
+  <div id="nprogress"><div class="bar"></div></div>
+
+  <!-- Header (clean) -->
+  <header>
+    <div class="brand"><span class="brand-dot"></span><span data-i18n="brand">A Project By Ahmed Badawy</span></div>
+    <div class="header-actions">
+      <button class="btn" id="openMenu" data-i18n="menuBtn" aria-label="Open menu">Menu</button>
+      <button class="btn" id="toggleTheme" data-i18n="themeBtn" aria-label="Toggle theme">Theme</button>
+      <button class="btn" id="toggleLang" data-i18n="langBtn" aria-label="Switch language">FR</button>
+    </div>
+  </header>
+
+  <!-- Overlay Menu (fixed structure) -->
+  <div class="overlay" id="overlay" aria-hidden="true">
+    <div class="nav-head">
+      <div class="brand" style="color:#fff"><span class="brand-dot" style="background:#fff"></span><strong data-i18n="nav">Navigation</strong></div>
+      <button class="btn" id="closeMenu" style="border-color:#fff;color:#fff" data-i18n="close" aria-label="Close menu">Close</button>
+    </div>
+    <nav>
+      <a href="#projects" data-i18n="works">Work</a>
+      <a href="#about" data-i18n="studio">About</a>
+      <a href="#resume" data-i18n="resume">Resume</a>
+      <a href="#resources">Resources</a>
+    </nav>
+    <div class="social">
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:hello@example.com">Email</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero-wrap">
+    <div class="hero">
+      <span class="badge" style="position:absolute;top:18px;left:18px;background:#fff;color:#111;border-radius:999px;padding:6px 10px;font-weight:800;font-size:12px;">PASSION</span>
+      <div class="hero-content" style="text-align:center">
+        <svg width="55%" viewBox="0 0 300 200" fill="none" stroke="currentColor" stroke-width="6">
+          <rect x="5" y="5" width="290" height="190" rx="28" fill="rgba(255,255,255,.06)"/>
+          <path d="M30 50h110M30 85h200M30 120h240M30 155h160" />
+        </svg>
+        <h1 class="hero-title" data-i18n="heroTitle">A PASSION</h1>
+        <div class="btn-row" style="display:flex;gap:12px;justify-content:center;margin-top:12px;flex-wrap:wrap">
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn" href="#resume">Resume</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Links (4 tiles) -->
+  <section id="quick">
+    <div class="inner">
+      <a class="tile" href="#resources"><span>Resources</span></a>
+      <a class="tile" href="#projects"><span>Projects</span></a>
+      <a class="tile" href="#about"><span>About</span></a>
+      <a class="tile" href="#resume"><span>Resume</span></a>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="section-inner">
+      <h2 class="section-title" data-i18n="projects">Projects</h2>
+
+      <!-- Project 1: Robotic Arm -->
+      <article class="project-block" id="proj-arm">
+        <div class="widgets">
+          <!-- 3D (dark) -->
+          <div class="media arm-stage" id="armStage">
+            <div class="arm-orbit" id="armOrbit">
+              <div class="arm" id="arm">
+                <div class="part base" id="pBase"><div class="joint"></div><div class="box" style="width:220px"></div>
+                  <div class="part upper" id="pUpper"><div class="joint"></div><div class="box" style="width:200px"></div>
+                    <div class="part fore" id="pFore"><div class="joint"></div><div class="box" style="width:180px"></div>
+                      <div class="part wrist" id="pWrist"><div class="joint"></div><div class="box" style="width:140px"></div>
+                        <div class="part claw" id="pClaw"><div class="box" style="width:60px;height:10px;top:9px;background:linear-gradient(90deg,#c6cedc,#e1e6ef)"></div><div class="tip"></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <!-- 2D (red) -->
+          <div class="media" role="img" aria-label="2D robotic blueprint">
+            <svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid meet" style="width:80%;height:auto">
+              <g stroke="#aab1bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                <rect x="60" y="360" width="200" height="24" rx="8" stroke-opacity=".35"/>
+                <circle cx="60" cy="372" r="14" />
+                <g transform="translate(260 372)"><circle cx="0" cy="0" r="16"/><path d="M0 0 L180 0"/>
+                  <g transform="translate(180 0)"><circle cx="0" cy="0" r="16"/><path d="M0 0 L150 0"/>
+                    <g transform="translate(150 0)"><circle cx="0" cy="0" r="14"/><path d="M0 0 L100 0"/>
+                      <g transform="translate(100 0)"><path d="M0 0 l28 -8 M0 0 l28 8"/></g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="content-card"><h3>Robotic Arm</h3><p>One project, two views: a dark interactive CSS‑3D arm beside a clean 2D blueprint. Drag to orbit; pointer controls the joints. The 2D view is perfect for docs and quick specs.</p></div>
+      </article>
+
+      <!-- Project 2: Mobile Rover (duplicate structure) -->
+      <article class="project-block" id="proj-rover">
+        <div class="widgets">
+          <div class="media arm-stage">
+            <svg viewBox="0 0 640 360" style="width:80%;height:auto">
+              <g fill="none" stroke="#cfd6e3" stroke-width="3" opacity=".9">
+                <rect x="40" y="220" width="560" height="20" rx="10"/>
+                <circle cx="140" cy="240" r="26"/><circle cx="320" cy="240" r="26"/><circle cx="500" cy="240" r="26"/>
+                <path d="M140 240 L180 200 L460 200 L500 240"/>
+              </g>
+            </svg>
+          </div>
+          <div class="media" style="display:flex;align-items:center;justify-content:center">
+            <svg viewBox="0 0 800 500" style="width:80%;height:auto">
+              <g stroke="#aab1bf" stroke-width="4" fill="none">
+                <rect x="120" y="280" width="560" height="30" rx="10"/>
+                <circle cx="220" cy="310" r="22"/><circle cx="400" cy="310" r="22"/><circle cx="580" cy="310" r="22"/>
+                <path d="M220 310 L270 260 L530 260 L580 310"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="content-card"><h3>Mobile Rover</h3><p>Concept rover showcased in 3D (dark) and 2D (red). The pair illustrates suspension layout and wheelbase in a way that suits both demo and documentation.</p></div>
+      </article>
+
+    </div>
+  </section>
+
+      <!-- Project 3: Manipulator Controller -->
+      <article class="project-block" id="proj-controller">
+        <div class="widgets">
+          <div class="media arm-stage" style="display:flex;align-items:center;justify-content:center">
+            <svg viewBox="0 0 720 420" style="width:82%;height:auto">
+              <g fill="none" stroke="#cfd6e3" stroke-width="3" opacity=".9">
+                <rect x="80" y="80" width="560" height="260" rx="22"/>
+                <path d="M120 140h200M120 180h320M120 220h420M120 260h260"/>
+                <circle cx="520" cy="320" r="10"/>
+                <circle cx="560" cy="320" r="10"/>
+                <circle cx="600" cy="320" r="10"/>
+              </g>
+            </svg>
+          </div>
+          <div class="media" style="display:flex;align-items:center;justify-content:center">
+            <svg viewBox="0 0 800 500" style="width:82%;height:auto">
+              <g stroke="#aab1bf" stroke-width="4" fill="none">
+                <rect x="120" y="100" width="560" height="280" rx="18"/>
+                <path d="M180 160h200M180 200h320M180 240h420M180 280h260"/>
+                <g opacity=".7">
+                  <path d="M220 340 C 260 300, 340 300, 380 340"/>
+                  <path d="M380 340 C 420 300, 500 300, 540 340"/>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="content-card"><h3>Manipulator Controller</h3><p>Control interface mock: PID channels, status lights, and motion presets. The red schematic shows signal flow; the dark panel hints at the runtime UI.</p></div>
+      </article>
+
+      <!-- Project 4: Vision Module -->
+      <article class="project-block" id="proj-vision">
+        <div class="widgets">
+          <div class="media arm-stage" style="display:flex;align-items:center;justify-content:center">
+            <svg viewBox="0 0 720 420" style="width:82%;height:auto">
+              <defs>
+                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M40 0H0M0 40V0" stroke="#3a4356" stroke-width="1"/>
+                </pattern>
+              </defs>
+              <rect x="80" y="60" width="560" height="300" rx="18" fill="url(#grid)" stroke="#cfd6e3" stroke-width="2"/>
+              <g stroke="#cfd6e3" stroke-width="3" fill="none">
+                <rect x="140" y="120" width="180" height="110"/>
+                <rect x="420" y="160" width="160" height="90"/>
+              </g>
+            </svg>
+          </div>
+          <div class="media" style="display:flex;align-items:center;justify-content:center">
+            <svg viewBox="0 0 800 500" style="width:82%;height:auto">
+              <g stroke="#aab1bf" stroke-width="4" fill="none">
+                <rect x="100" y="90" width="600" height="320" rx="16"/>
+                <g opacity=".85">
+                  <rect x="160" y="150" width="200" height="120"/>
+                  <rect x="480" y="190" width="140" height="80"/>
+                  <circle cx="420" cy="250" r="10"/>
+                  <path d="M420 250 L330 210 M420 250 L540 230"/>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="content-card"><h3>Vision Module</h3><p>Lightweight detection overlay for embedded devices. The 3D-style tile evokes a live feed; the 2D drawing illustrates bounding boxes and anchors.</p></div>
+      </article>
+
+      <!-- Project 5: Path Planner -->
+      <article class="project-block" id="proj-planner">
+        <div class="widgets">
+          <div class="media arm-stage" style="display:flex;align-items:center;justify-content:center">
+            <svg viewBox="0 0 720 420" style="width:82%;height:auto">
+              <g fill="none" stroke="#cfd6e3" stroke-width="3" opacity=".9">
+                <path d="M120 320 C 220 180, 360 180, 520 300 S 640 360, 640 280"/>
+                <circle cx="120" cy="320" r="8"/><circle cx="520" cy="300" r="8"/><circle cx="640" cy="280" r="8"/>
+              </g>
+            </svg>
+          </div>
+          <div class="media" style="display:flex;align-items:center;justify-content:center">
+            <svg viewBox="0 0 800 500" style="width:82%;height:auto">
+              <g stroke="#aab1bf" stroke-width="4" fill="none">
+                <circle cx="180" cy="340" r="10"/>
+                <circle cx="400" cy="220" r="10"/>
+                <circle cx="620" cy="320" r="10"/>
+                <path d="M180 340 Q 300 240 400 220 T 620 320"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="content-card"><h3>Path Planner</h3><p>S-curve planner showcasing bezier waypoints and smooth acceleration limits. Dark tile shows runtime path; red tile shows the analytic curve.</p></div>
+      </article>
+
+
+
+  <!-- Resources (anchor for quick link) -->
+  <section id="resources">
+    <div class="section-inner">
+      <h2 class="section-title">Resources</h2>
+      <div class="content-card"><p>Curated tools and references I use regularly.</p>
+        <div class="link-grid">
+          <a class="link-pill" href="https://threejs.org/editor/" target="_blank" rel="noopener">Three.js Editor<span>↗</span></a>
+          <a class="link-pill" href="https://spline.design/" target="_blank" rel="noopener">Spline 3D<span>↗</span></a>
+          <a class="link-pill" href="https://codesandbox.io/" target="_blank" rel="noopener">CodeSandbox<span>↗</span></a>
+          <a class="link-pill" href="https://blender.org/" target="_blank" rel="noopener">Blender<span>↗</span></a>
+          <a class="link-pill" href="https://www.onshape.com/en/" target="_blank" rel="noopener">Onshape CAD<span>↗</span></a>
+          <a class="link-pill" href="https://github.com/" target="_blank" rel="noopener">GitHub<span>↗</span></a>
+          <a class="link-pill" href="https://www.figma.com/" target="_blank" rel="noopener">Figma<span>↗</span></a>
+          <a class="link-pill" href="https://www.desmos.com/calculator" target="_blank" rel="noopener">Kinematics Calculator<span>↗</span></a>
+          <a class="link-pill" href="https://learnopencv.com/" target="_blank" rel="noopener">OpenCV Tutorials<span>↗</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience (from resume) -->
+  <section id="experience">
+    <div class="section-inner">
+      <h2 class="section-title">Experience</h2>
+      <div class="content-card">
+        <h3 style="margin-bottom:10px">Technical Highlights</h3>
+        <ul style="line-height:1.6">
+          <li>Computer vision for autonomous underwater robot line detection; deployed as redundant guidance for hull‑cleaning navigation.</li>
+          <li>STM32 & Raspberry Pi sensor diagrams and bench‑test plans for encoders and optical sensors; reduced integration risk.</li>
+          <li>Sensor trade study (sonar, ultrasonic, IMU) resulting in a 60% BOM reduction while meeting range targets.</li>
+          <li>Led a 10‑person team building VEX/DJI robotics; mechanical, electrical, and operations coaching.</li>
+          <li>Claw end‑effector prototyped and iterated for a service arm; documented specs & procedures.</li>
+        </ul>
+        <p style="opacity:.8;margin-top:8px">See resume below for full history and education.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="section-inner">
+      <h2 class="section-title">About</h2>
+      <div class="grid">
+        <div class="content-card"><h3>Ahmed Badawy</h3><p>I build interactive robotics experiences and polished product websites. My work blends performance, accessibility, and delightful motion.</p></div>
+        <div class="content-card" style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220'%3E%3Cdefs%3E%3CradialGradient id='g' cx='50%25' cy='45%25' r='60%25'%3E%3Cstop offset='0%25' stop-color='%23ffb6c1'/%3E%3Cstop offset='100%25' stop-color='%23b1383e'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='220' height='220' rx='110' fill='url(%23g)'/%3E%3C/svg%3E" alt="Portrait of Ahmed Badawy" class="avatar">
+          <div>
+            <strong>Based in</strong> — Available for robotics & web projects.
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section><section id="resume">
+    <div class="section-inner">
+      <h2 class="section-title" data-i18n="resume">Resume</h2>
+      <div class="content-card">
+        <p>View or download my resume.</p>
+        <div class="btn-row" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
+          <a class="btn" href="/resume.pdf" target="_blank" rel="noopener">Open PDF</a>
+          <a class="btn" href="/resume.pdf" download>Download</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site">
+    <span>© 2025 Ahmed Badawy</span>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:hello@example.com">Email</a>
+    </div>
+  </footer>
+
+  <!-- background visuals -->
+  <div class="noise" aria-hidden="true"></div>
+
+  <script>
+    const I18N = { 
+      en:{ title:'A Project By Ahmed Badawy', brand:'A Project By Ahmed Badawy', menuBtn:'Menu', themeBtn:'Theme', langBtn:'FR', nav:'Navigation', close:'Close', works:'Work', studio:'About', resume:'Resume', heroTitle:'A PASSION', projects:'Projects' }, 
+      fr:{ title:'Un projet par Ahmed Badawy', brand:'Un projet par Ahmed Badawy', menuBtn:'Menu', themeBtn:'Thème', langBtn:'EN', nav:'Navigation', close:'Fermer', works:'Travaux', studio:'À propos', resume:'CV', heroTitle:'UNE PASSION', projects:'Projets' } 
+    };
+    function applyI18n(lang){ const dict=I18N[lang]||I18N.en; document.documentElement.lang=lang; document.querySelectorAll('[data-i18n]').forEach(el=>{ const k=el.getAttribute('data-i18n'); if(!dict[k]) return; if(k==='title'){ document.title=dict[k]; } else if(k.endsWith('P')){ el.innerHTML=dict[k]; } else { el.textContent=dict[k]; } }); }
+
+    // Theme toggle
+    const htmlEl=document.documentElement; document.getElementById('toggleTheme').addEventListener('click',()=>{ const dark=htmlEl.getAttribute('data-theme')==='dark'; htmlEl.setAttribute('data-theme', dark?'light':'dark'); document.body.classList.toggle('dark', !dark); });
+    // Menu toggle
+    const overlay=document.getElementById('overlay'); document.getElementById('openMenu').addEventListener('click',()=>{ overlay.classList.add('open'); overlay.setAttribute('aria-hidden','false'); }); document.getElementById('closeMenu').addEventListener('click',()=>{ overlay.classList.remove('open'); overlay.setAttribute('aria-hidden','true'); });
+    // Cursor
+    const dot=document.getElementById('cursor'); const big=document.getElementById('cursorLg'); window.addEventListener('mousemove',(e)=>{ const x=e.clientX,y=e.clientY; dot.style.opacity=1; big.style.opacity=1; dot.style.transform=`translate(${x-2}px, ${y-2}px)`; big.style.transform=`translate(${x-12}px, ${y-12}px)`; }); window.addEventListener('mouseout',()=>{ dot.style.opacity=0; big.style.opacity=0; });
+
+    // 3D arm interaction
+    (function(){ const orbit=document.getElementById('armOrbit'); if(!orbit) return; const pBase=document.getElementById('pBase'); const pUpper=document.getElementById('pUpper'); const pFore=document.getElementById('pFore'); const pWrist=document.getElementById('pWrist'); const pClaw=document.getElementById('pClaw'); let rotX=-12,rotY=-20,drag=false,lx=0,ly=0; const stage=document.getElementById('armStage'); stage.addEventListener('mousedown',(e)=>{drag=true; lx=e.clientX; ly=e.clientY;}); window.addEventListener('mouseup',()=>drag=false); window.addEventListener('mousemove',(e)=>{ if(!drag) return; const dx=e.clientX-lx, dy=e.clientY-ly; lx=e.clientX; ly=e.clientY; rotY+=dx*0.2; rotX+=dy*0.2; orbit.style.transform=`rotateX(${rotX}deg) rotateY(${rotY}deg)`; }); stage.addEventListener('wheel',(e)=>{ rotY+=e.deltaY*0.05; orbit.style.transform=`rotateX(${rotX}deg) rotateY(${rotY}deg)`; }); let target={x:0,y:0}; stage.addEventListener('mousemove',(e)=>{ const r=stage.getBoundingClientRect(); target.x=(e.clientX-r.left)/r.width; target.y=(e.clientY-r.top)/r.height; }); function lerp(a,b,t){return a+(b-a)*t;} let a0=0,a1=10,a2=-8,a3=6,a4=8; function tick(){ const tx=(target.x-.5)*2; const ty=(target.y-.6)*2; a0=lerp(a0, tx*25, .08); a1=lerp(a1, (0.2-ty)*45, .08); a2=lerp(a2, (-ty)*35, .08); a3=lerp(a3, (ty)*25, .08); a4=lerp(a4, (Math.sin(performance.now()*0.003)*10), .12); pBase.style.transform=`translate3d(-80px,120px,0) rotateZ(${a0}deg)`; pUpper.style.transform=`translate3d(180px,0,0) rotateZ(${a1}deg)`; pFore.style.transform=`translate3d(200px,0,0) rotateZ(${a2}deg)`; pWrist.style.transform=`translate3d(200px,0,0) rotateZ(${a3}deg)`; pClaw.style.transform=`translate3d(180px,-2px,0) rotateZ(${a4}deg)`; requestAnimationFrame(tick);} tick(); })();
+
+    // Language toggle (default EN)
+    const langBtn=document.getElementById('toggleLang'); let currentLang=localStorage.getItem('lang')||'en'; applyI18n(currentLang); langBtn.addEventListener('click',()=>{ currentLang=currentLang==='en'?'fr':'en'; localStorage.setItem('lang', currentLang); applyI18n(currentLang); });
+  </script>
+</body>
+</html>
