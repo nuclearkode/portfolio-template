@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="title">A Project By Ahmed Badawy</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="dark">
+  <div class="cursor-dot" id="cursor"></div>
+  <div class="cursor" id="cursorLg"></div>
+  <div id="nprogress"><div class="bar"></div></div>
+
+  <header>
+    <div class="brand"><span class="brand-dot"></span><span data-i18n="brand">A Project By Ahmed Badawy</span></div>
+    <div class="header-actions">
+      <button class="btn" id="openMenu" data-i18n="menuBtn" aria-label="Open menu">Menu</button>
+      <button class="btn" id="toggleTheme" data-i18n="themeBtn" aria-label="Toggle theme">Theme</button>
+      <button class="btn" id="toggleLang" data-i18n="langBtn" aria-label="Switch language">FR</button>
+    </div>
+  </header>
+
+  <div class="overlay" id="overlay" aria-hidden="true">
+    <div class="nav-head">
+      <div class="brand"><span class="brand-dot"></span><strong data-i18n="nav">Navigation</strong></div>
+      <button class="btn" id="closeMenu" data-i18n="close" aria-label="Close menu">Close</button>
+    </div>
+    <nav>
+      <a href="#projects" data-i18n="works">Work</a>
+      <a href="#about" data-i18n="studio">About</a>
+      <a href="#resume" data-i18n="resume">Resume</a>
+      <a href="#resources">Resources</a>
+    </nav>
+    <div class="social">
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:hello@example.com">Email</a>
+    </div>
+  </div>
+
+  <div class="hero-wrap">
+    <div class="hero">
+      <span class="badge">PASSION</span>
+      <div class="hero-content">
+        <svg width="55%" viewBox="0 0 300 200" fill="none" stroke="currentColor" stroke-width="6">
+          <rect x="5" y="5" width="290" height="190" rx="28" fill="rgba(255,255,255,.06)" />
+          <path d="M30 50h110M30 85h200M30 120h240M30 155h160" />
+        </svg>
+        <h1 class="hero-title" data-i18n="heroTitle">A PASSION</h1>
+        <div class="btn-row">
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn" href="#resume">Resume</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="quick">
+    <div class="inner">
+      <a class="tile" href="#resources"><span>Resources</span></a>
+      <a class="tile" href="#projects"><span>Projects</span></a>
+      <a class="tile" href="#about"><span>About</span></a>
+      <a class="tile" href="#resume"><span>Resume</span></a>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-inner">
+      <h2 class="section-title" data-i18n="projects">Projects</h2>
+
+      <article class="project-block" id="proj-arm">
+        <div class="widgets">
+          <div class="media arm-stage" id="armStage">
+            <div class="arm-orbit" id="armOrbit">
+              <div class="arm" id="arm">
+                <div class="part base" id="pBase"><div class="joint"></div><div class="box" style="width:220px"></div>
+                  <div class="part upper" id="pUpper"><div class="joint"></div><div class="box" style="width:200px"></div>
+                    <div class="part fore" id="pFore"><div class="joint"></div><div class="box" style="width:180px"></div>
+                      <div class="part wrist" id="pWrist"><div class="joint"></div><div class="box" style="width:140px"></div>
+                        <div class="part claw" id="pClaw"><div class="box" style="width:60px;height:10px;top:9px;background:linear-gradient(90deg,#c6cedc,#e1e6ef)"></div><div class="tip"></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="media centered" role="img" aria-label="2D robotic blueprint">
+            <svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid meet" style="width:80%;height:auto">
+              <g stroke="#aab1bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                <rect x="60" y="360" width="200" height="24" rx="8" stroke-opacity=".35" />
+                <circle cx="60" cy="372" r="14" />
+                <g transform="translate(260 372)"><circle cx="0" cy="0" r="16" /><path d="M0 0 L180 0" />
+                  <g transform="translate(180 0)"><circle cx="0" cy="0" r="16" /><path d="M0 0 L150 0" />
+                    <g transform="translate(150 0)"><circle cx="0" cy="0" r="14" /><path d="M0 0 L100 0" />
+                      <g transform="translate(100 0)"><path d="M0 0 l28 -8 M0 0 l28 8" /></g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="content-card"><h3>Robotic Arm</h3><p>One project, two views: a dark interactive CSS‑3D arm beside a clean 2D blueprint. Drag to orbit; pointer controls the joints. The 2D view is perfect for docs and quick specs.</p></div>
+      </article>
+
+      <article class="project-block" id="proj-rover">
+        <div class="widgets">
+          <div class="media arm-stage centered">
+            <svg viewBox="0 0 640 360" style="width:80%;height:auto">
+              <g fill="none" stroke="#cfd6e3" stroke-width="3" opacity=".9">
+                <rect x="40" y="220" width="560" height="20" rx="10" />
+                <circle cx="140" cy="240" r="26" /><circle cx="320" cy="240" r="26" /><circle cx="500" cy="240" r="26" />
+                <path d="M140 240 L180 200 L460 200 L500 240" />
+              </g>
+            </svg>
+          </div>
+          <div class="media centered">
+            <svg viewBox="0 0 800 500" style="width:80%;height:auto">
+              <g stroke="#aab1bf" stroke-width="4" fill="none">
+                <rect x="120" y="280" width="560" height="30" rx="10" />
+                <circle cx="220" cy="310" r="22" /><circle cx="400" cy="310" r="22" /><circle cx="580" cy="310" r="22" />
+                <path d="M220 310 L270 260 L530 260 L580 310" />
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="content-card"><h3>Mobile Rover</h3><p>Concept rover showcased in 3D (dark) and 2D (red). The pair illustrates suspension layout and wheelbase in a way that suits both demo and documentation.</p></div>
+      </article>
+
+      <article class="project-block" id="proj-controller">
+        <div class="widgets">
+          <div class="media arm-stage centered">
+            <svg viewBox="0 0 720 420" style="width:82%;height:auto">
+              <g fill="none" stroke="#cfd6e3" stroke-width="3" opacity=".9">
+                <rect x="80" y="80" width="560" height="260" rx="22" />
+                <path d="M120 140h200M120 180h320M120 220h420M120 260h260" />
+                <circle cx="520" cy="320" r="10" />
+                <circle cx="560" cy="320" r="10" />
+                <circle cx="600" cy="320" r="10" />
+              </g>
+            </svg>
+          </div>
+          <div class="media centered">
+            <svg viewBox="0 0 800 500" style="width:82%;height:auto">
+              <g stroke="#aab1bf" stroke-width="4" fill="none">
+                <rect x="120" y="100" width="560" height="280" rx="18" />
+                <path d="M180 160h200M180 200h320M180 240h420M180 280h260" />
+                <g opacity=".7">
+                  <path d="M220 340 C 260 300, 340 300, 380 340" />
+                  <path d="M380 340 C 420 300, 500 300, 540 340" />
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="content-card"><h3>Manipulator Controller</h3><p>Control interface mock: PID channels, status lights, and motion presets. The red schematic shows signal flow; the dark panel hints at the runtime UI.</p></div>
+      </article>
+
+      <article class="project-block" id="proj-vision">
+        <div class="widgets">
+          <div class="media arm-stage centered">
+            <svg viewBox="0 0 720 420" style="width:82%;height:auto">
+              <defs>
+                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M40 0H0M0 40V0" stroke="#3a4356" stroke-width="1" />
+                </pattern>
+              </defs>
+              <rect x="80" y="60" width="560" height="300" rx="18" fill="url(#grid)" stroke="#cfd6e3" stroke-width="2" />
+              <g stroke="#cfd6e3" stroke-width="3" fill="none">
+                <rect x="140" y="120" width="180" height="110" />
+                <rect x="420" y="160" width="160" height="90" />
+              </g>
+            </svg>
+          </div>
+          <div class="media centered">
+            <svg viewBox="0 0 800 500" style="width:82%;height:auto">
+              <g stroke="#aab1bf" stroke-width="4" fill="none">
+                <rect x="100" y="90" width="600" height="320" rx="16" />
+                <g opacity=".85">
+                  <rect x="160" y="150" width="200" height="120" />
+                  <rect x="480" y="190" width="140" height="80" />
+                  <circle cx="420" cy="250" r="10" />
+                  <path d="M420 250 L330 210 M420 250 L540 230" />
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="content-card"><h3>Vision Module</h3><p>Lightweight detection overlay for embedded devices. The 3D-style tile evokes a live feed; the 2D drawing illustrates bounding boxes and anchors.</p></div>
+      </article>
+
+      <article class="project-block" id="proj-planner">
+        <div class="widgets">
+          <div class="media arm-stage centered">
+            <svg viewBox="0 0 720 420" style="width:82%;height:auto">
+              <g fill="none" stroke="#cfd6e3" stroke-width="3" opacity=".9">
+                <path d="M120 320 C 220 180, 360 180, 520 300 S 640 360, 640 280" />
+                <circle cx="120" cy="320" r="8" /><circle cx="520" cy="300" r="8" /><circle cx="640" cy="280" r="8" />
+              </g>
+            </svg>
+          </div>
+          <div class="media centered">
+            <svg viewBox="0 0 800 500" style="width:82%;height:auto">
+              <g stroke="#aab1bf" stroke-width="4" fill="none">
+                <circle cx="180" cy="340" r="10" />
+                <circle cx="400" cy="220" r="10" />
+                <circle cx="620" cy="320" r="10" />
+                <path d="M180 340 Q 300 240 400 220 T 620 320" />
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="content-card"><h3>Path Planner</h3><p>S-curve planner showcasing bezier waypoints and smooth acceleration limits. Dark tile shows runtime path; red tile shows the analytic curve.</p></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="resources">
+    <div class="section-inner">
+      <h2 class="section-title">Resources</h2>
+      <div class="content-card"><p>Curated tools and references I use regularly.</p>
+        <div class="link-grid">
+          <a class="link-pill" href="https://threejs.org/editor/" target="_blank" rel="noopener">Three.js Editor<span>↗</span></a>
+          <a class="link-pill" href="https://spline.design/" target="_blank" rel="noopener">Spline 3D<span>↗</span></a>
+          <a class="link-pill" href="https://codesandbox.io/" target="_blank" rel="noopener">CodeSandbox<span>↗</span></a>
+          <a class="link-pill" href="https://blender.org/" target="_blank" rel="noopener">Blender<span>↗</span></a>
+          <a class="link-pill" href="https://www.onshape.com/en/" target="_blank" rel="noopener">Onshape CAD<span>↗</span></a>
+          <a class="link-pill" href="https://github.com/" target="_blank" rel="noopener">GitHub<span>↗</span></a>
+          <a class="link-pill" href="https://www.figma.com/" target="_blank" rel="noopener">Figma<span>↗</span></a>
+          <a class="link-pill" href="https://www.desmos.com/calculator" target="_blank" rel="noopener">Kinematics Calculator<span>↗</span></a>
+          <a class="link-pill" href="https://learnopencv.com/" target="_blank" rel="noopener">OpenCV Tutorials<span>↗</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="section-inner">
+      <h2 class="section-title">Experience</h2>
+      <div class="content-card">
+        <h3 style="margin-bottom:10px">Technical Highlights</h3>
+        <ul style="line-height:1.6">
+          <li>Computer vision for autonomous underwater robot line detection; deployed as redundant guidance for hull‑cleaning navigation.</li>
+          <li>STM32 & Raspberry Pi sensor diagrams and bench‑test plans for encoders and optical sensors; reduced integration risk.</li>
+          <li>Sensor trade study (sonar, ultrasonic, IMU) resulting in a 60% BOM reduction while meeting range targets.</li>
+          <li>Led a 10-person team building VEX/DJI robotics; mechanical, electrical, and operations coaching.</li>
+          <li>Claw end-effector prototyped and iterated for a service arm; documented specs & procedures.</li>
+        </ul>
+        <p style="opacity:.8;margin-top:8px">See resume below for full history and education.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-inner">
+      <h2 class="section-title">About</h2>
+      <div class="grid">
+        <div class="content-card"><h3>Ahmed Badawy</h3><p>I build interactive robotics experiences and polished product websites. My work blends performance, accessibility, and delightful motion.</p></div>
+        <div class="content-card about-card">
+          <img src="assets/images/ahmed-badawy-profile.svg" alt="Portrait of Ahmed Badawy" class="avatar" />
+          <div>
+            <strong>Based in</strong> — Available for robotics &amp; web projects.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="resume">
+    <div class="section-inner">
+      <h2 class="section-title" data-i18n="resume">Resume</h2>
+      <div class="content-card">
+        <p>View or download my resume.</p>
+        <div class="btn-row">
+          <a class="btn" href="/resume.pdf" target="_blank" rel="noopener">Open PDF</a>
+          <a class="btn" href="/resume.pdf" download>Download</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site">
+    <span>© 2025 Ahmed Badawy</span>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:hello@example.com">Email</a>
+    </div>
+  </footer>
+
+  <div class="noise" aria-hidden="true"></div>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
