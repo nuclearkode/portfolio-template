@@ -1,5 +1,6 @@
-// Place any global data in this file.
-// You can import this data from anywhere in your site by using the `import` keyword.
+// Global site metadata used across the portfolio.
+const SITE_TITLE = 'Ahmed — Platform Engineer';
+const SITE_DESCRIPTION =
+  'Portfolio and engineering journal of Ahmed, building resilient platforms, robotics systems, and developer tooling.';
 
-export const SITE_TITLE = "Astro Blog";
-export const SITE_DESCRIPTION = "Welcome to my website!";
+export { SITE_TITLE, SITE_DESCRIPTION };
