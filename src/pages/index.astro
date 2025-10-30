@@ -650,19 +650,22 @@ const tools = [
                                                 <h2>Latest thinking from the field.</h2>
                                         </header>
                                         <div class="writing-grid">
-                                                {featuredPosts.map((post) => (
-                                                        <a class="writing-card" href={post.slug}>
-                                                                <h3>{post.data.title}</h3>
-                                                                <time datetime={post.data.pubDate.toISOString()}>
-                                                                        {post.data.pubDate.toLocaleDateString('en-US', {
-                                                                                month: 'short',
-                                                                                day: 'numeric',
+                                                {featuredPosts.map((post) => {
+                                                        const href = `/blog/${post.slug}/`;
+                                                        return (
+                                                                <a class="writing-card" href={href}>
+                                                                        <h3>{post.data.title}</h3>
+                                                                        <time datetime={post.data.pubDate.toISOString()}>
+                                                                                {post.data.pubDate.toLocaleDateString('en-US', {
+                                                                                        month: 'short',
+                                                                                        day: 'numeric',
                                                                                 year: 'numeric',
                                                                         })}
                                                                 </time>
                                                                 <p>{post.data.description}</p>
-                                                        </a>
-                                                ))}
+                                                                </a>
+                                                        );
+                                                })}
                                         </div>
                                 </section>
 
