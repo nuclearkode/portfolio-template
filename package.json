@@ -2,6 +2,7 @@
   "name": "portfolio-template",
   "description": "Ahmed's engineering portfolio built with Astro.",
   "private": true,
+  "private": true,
   "description": "Jordan Mitchell's product design portfolio built with Astro.",
   "private": true,
   "cloudflare": {
