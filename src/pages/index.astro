@@ -15,55 +15,56 @@ const featuredProjects = projects.slice(0, 3);
 
 const capabilities = [
         {
-                title: 'Platform engineering',
+                title: 'Platform architecture',
                 description:
-                        'Designing resilient infrastructure, DX tooling, and guardrails so product teams can move fast without breaking mission-critical systems.',
+                        'Design scalable infrastructure that balances speed with resilience. From multi-region topologies to IaC guardrails, every layer is intentional.',
         },
         {
-                title: 'Full-stack delivery',
+                title: 'Mission-critical delivery',
                 description:
-                        'Shipping TypeScript, Rust, and Go services alongside modern web interfaces to connect deep tech to the humans operating it.',
+                        'Lead cross-functional squads through complex launches with clear runbooks, progressive delivery, and instrumentation that keeps signals high.',
         },
         {
-                title: 'Systems leadership',
+                title: 'Developer experience',
                 description:
-                        'Coaching cross-functional squads, shaping technical strategy, and translating ambiguity into roadmaps grounded in outcomes.',
+                        'Level up engineering teams with paved roads, reusable tooling, and feedback loops that remove friction without removing autonomy.',
         },
         {
-                title: 'DevOps & observability',
+                title: 'Applied robotics & ML',
                 description:
-                        'Standing up CI/CD, telemetry pipelines, and feedback loops that keep releases healthy long after launch week.',
+                        'Ship perception, control, and telemetry stacks that survive the real world—complete with command centers operators trust.',
         },
 ];
 
 const focusModes = [
         {
                 id: 'systems',
-                label: 'Systems Thinking',
+                label: 'Systems thinking',
                 headline: 'Map the whole system before touching the code.',
                 description:
-                        'I start with architecture maps, failure drills, and stakeholder interviews to understand the forces around a problem. The result is a plan that scales with the business and the team operating it.',
+                        'Architecture maps, failure drills, and stakeholder interviews surface hidden coupling. This upfront signal keeps later trade-offs grounded in reality.',
         },
         {
                 id: 'delivery',
-                label: 'Outcome Delivery',
+                label: 'Outcome delivery',
                 headline: 'Ship iteratively without sacrificing reliability.',
                 description:
-                        'From RFCs to rollout ladders, I keep feedback loops tight. We automate the boring parts, align on telemetry, and release in thin slices to derisk complexity.',
+                        'RFCs, rollout ladders, and observability contracts shorten the path from idea to impact. Each slice is production-ready and measurable.',
         },
         {
-                id: 'teams',
-                label: 'Team Enablement',
+                id: 'enablement',
+                label: 'Team enablement',
                 headline: 'Grow the humans alongside the stack.',
                 description:
-                        'Healthy teams build healthy products. I mentor engineers, design rituals that stick, and leave behind documentation that future hires can build from.',
+                        'Pairing sessions, guardrail docs, and brown-bag sessions ensure the work is sustainable. I leave behind playbooks teams actually use.',
         },
 ];
 
 const signalMetrics = [
-        { label: 'Uptime maintained post migrations', value: 99.995, suffix: '%', decimals: 3 },
+        { label: 'Uptime maintained through migrations', value: 99.995, suffix: '%', decimals: 3 },
         { label: 'Incidents automated away', value: 84, suffix: '', decimals: 0 },
         { label: 'Latency reduced across services', value: 37, suffix: '%', decimals: 0 },
+        { label: 'Engineers onboarded via paved roads', value: 120, suffix: '+', decimals: 0 },
 ];
 
 const experience = [
@@ -72,93 +73,21 @@ const experience = [
                 company: 'Lumina Orbit',
                 period: '2021 — Present',
                 details:
-                        'Building a self-healing telemetry platform for satellite fleets. Partner closely with mission ops to ship features that stand up to orbital realities.',
+                        'Mission control stack for satellite fleets. Established golden paths for telemetry, anomaly response, and post-launch observability.',
         },
         {
                 role: 'Staff Software Engineer',
                 company: 'Northwind Labs',
                 period: '2017 — 2021',
                 details:
-                        'Launched robotics navigation systems, revamped the developer platform, and codified technical strategy as the company scaled 10x.',
+                        'Scaled robotics navigation systems and developer tooling during 10x growth. Introduced service templates and SLO-driven delivery.',
         },
         {
                 role: 'Senior Full-stack Engineer',
                 company: 'Brightside Systems',
                 period: '2013 — 2017',
                 details:
-                        'Delivered modernization projects across finance and health portfolios with a focus on accessibility and resilient architecture.',
-
-const projects = [
-        {
-                title: 'Compass Banking App',
-                summary:
-                        'Led a year-long redesign that reduced onboarding friction, aligned the product with accessibility standards, and unlocked a 26% lift in mobile engagement.',
-                outcome: 'Result · 71% of new accounts were opened on mobile post-launch.',
-                tags: ['Design Strategy', 'Design Systems', 'UX Research'],
-                link: '/blog/compass-banking-app/',
-        },
-        {
-                title: 'Pathfinder Travel Platform',
-                summary:
-                        'Crafted an end-to-end booking flow optimized for group travel. Prototyped, tested with 42 travelers, and partnered with engineering to deliver the MVP in 12 weeks.',
-                outcome: 'Result · Checkout completion increased by 33% within the first month.',
-                tags: ['Product Design', 'Prototyping', 'User Testing'],
-                link: '/blog/pathfinder-travel-platform/',
-        },
-        {
-                title: 'Atlas Dashboard Modernization',
-                summary:
-                        'Defined the visual language, information architecture, and data visualization standards for a complex analytics dashboard used by enterprise teams.',
-                outcome: 'Result · Support tickets dropped by 48% as teams gained clarity into their metrics.',
-                tags: ['Information Architecture', 'Design Ops', 'Data Visualization'],
-                link: '/blog/atlas-dashboard-modernization/',
-        },
-];
-
-const services = [
-        {
-                title: 'Product Design Leadership',
-                description:
-                        'Fractional design leadership that clarifies product vision, rallies cross-functional teams, and keeps execution focused on measurable outcomes.',
-        },
-        {
-                title: 'Experience Strategy Sprints',
-                description:
-                        'Two-week engagements to uncover insights, map opportunity areas, and deliver customer journeys that drive roadmap alignment.',
-        },
-        {
-                title: 'Design Systems & Ops',
-                description:
-                        'Build scalable systems, rituals, and tooling so teams ship faster without sacrificing craft or accessibility.',
-        },
-        {
-                title: 'Inclusive Research & Testing',
-                description:
-                        'Conduct moderated studies, synthesize findings, and coach teams on inclusive research practices that broaden reach.',
-        },
-];
-
-const experience = [
-        {
-                role: 'Principal Product Designer',
-                company: 'Lumina Health',
-                period: '2021 — Present',
-                details:
-                        'Own the patient experience across mobile and web. Partner with product and engineering to ship outcomes-focused solutions for chronic care.',
-        },
-        {
-                role: 'Design Lead',
-                company: 'Northwind Labs',
-                period: '2017 — 2021',
-                details:
-                        'Scaled a design practice from 2 to 14 while delivering enterprise AI tools for operations teams across manufacturing and logistics.',
-        },
-        {
-                role: 'Senior UX Designer',
-                company: 'Brightside',
-                period: '2013 — 2017',
-                details:
-                        'Shipped growth experiments, brand refreshes, and a customer support platform that improved NPS by 19 points.',
+                        'Modernized regulated apps across finance and health. Built CI/CD, feature flagging, and security automation from the ground up.',
         },
 ];
 
@@ -167,20 +96,19 @@ const testimonials = [
                 quote:
                         'Ahmed is the engineer you call when the stakes are high. They guided our launch sequence, tuned the platform under pressure, and kept the team calm through it all.',
                 name: 'Casey Nguyen',
-                title: 'VP Engineering, Lumina Orbit',
+                title: 'VP Engineering · Lumina Orbit',
         },
         {
                 quote:
-                        'We rebuilt our CI/CD with Ahmed in the lead. Deploy frequency jumped 5x, and our error budget is still intact six months later.',
-                        'Jordan guided our product strategy through a pivotal pivot. Their ability to connect research to roadmaps helped us hit product-market fit within two quarters.',
-                name: 'Casey Nguyen',
-                title: 'VP Product, Lumina Health',
-        },
-        {
-                quote:
-                        'The design system Jordan delivered became the connective tissue between design and engineering. We ship faster and with more confidence.',
+                        'We rebuilt our CI/CD with Ahmed in the lead. Deploy frequency jumped 5×, and our error budget is still intact six months later.',
                 name: 'Priya Desai',
-                title: 'Director of Engineering, Northwind Labs',
+                title: 'Director of Engineering · Northwind Labs',
+        },
+        {
+                quote:
+                        'Ahmed translates ambiguous missions into crisp architectures. Their playbooks helped us onboard two new squads without a single sev-one.',
+                name: 'Jonah Ramirez',
+                title: 'Head of Product · Brightside Systems',
         },
 ];
 
@@ -196,15 +124,10 @@ const tools = [
         'Terraform',
         'Kubernetes',
         'Grafana',
+        'Prometheus',
         'WebGL',
-        'Figma',
-        'Penpot',
-        'Miro',
-        'Lookback',
-        'Notion',
-        'Storybook',
-        'Dovetail',
-        'Webflow',
+        'Docker',
+        'OpenTelemetry',
 ];
 ---
 
@@ -214,54 +137,33 @@ const tools = [
                 <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
                 <style>
                         body {
-                                background: radial-gradient(circle at 10% -10%, rgba(37, 99, 235, 0.12), transparent 55%),
-                                        var(--sand);
+                                background: radial-gradient(circle at 10% -10%, rgba(37, 99, 235, 0.12), transparent 55%), var(--sand);
                         }
-                        .hero {
-                                position: relative;
-                                width: 100%;
-                                margin: 0;
-                                padding: clamp(6rem, 12vw, 9rem) 0;
-                                color: rgba(255, 255, 255, 0.88);
-                                overflow: hidden;
-                        }
-                        .hero::before {
-                                content: '';
-                                position: absolute;
-                                inset: 0;
-                                background:
-                                        linear-gradient(120deg, rgba(2, 6, 23, 0.95) 0%, rgba(15, 23, 42, 0.8) 55%, rgba(2, 6, 23, 0.96) 100%),
-                                        url('https://images.unsplash.com/photo-1523966211575-eb4a01e7dd51?auto=format&fit=crop&w=2400&q=80')
-                                                center / cover no-repeat;
-                                transform: scale(1.05);
-                                filter: saturate(1.1);
                         main {
                                 width: 100%;
                                 margin: 0;
-                                padding: 0;
+                                padding: 0 0 6rem;
                         }
                         .hero {
                                 position: relative;
                                 width: 100vw;
                                 margin: 0 calc(50% - 50vw);
-                                min-height: min(88vh, 760px);
-                                padding: clamp(6rem, 12vw, 9rem) clamp(1.5rem, 10vw, 6rem) clamp(6rem, 10vw, 8rem);
+                                min-height: min(90vh, 760px);
+                                padding: clamp(5rem, 12vw, 9rem) clamp(1.5rem, 8vw, 6rem) clamp(4rem, 10vw, 8rem);
                                 display: flex;
                                 align-items: center;
-                                justify-content: flex-start;
-                                color: rgba(255, 255, 255, 0.88);
+                                color: rgba(255, 255, 255, 0.9);
                                 background:
-                                        linear-gradient(135deg, rgba(4, 7, 22, 0.92) 0%, rgba(15, 23, 42, 0.45) 45%, rgba(2, 6, 23, 0.92) 100%),
-                                        url('https://images.unsplash.com/photo-1588436706487-9d55d73a39e3?auto=format&fit=crop&w=2400&q=80')
+                                        linear-gradient(135deg, rgba(4, 7, 22, 0.9) 0%, rgba(15, 23, 42, 0.5) 45%, rgba(4, 7, 22, 0.92) 100%),
+                                        url('https://images.unsplash.com/photo-1581091870627-3c54c1376736?auto=format&fit=crop&w=2400&q=80')
                                                 center / cover no-repeat;
-                                overflow: hidden;
                         }
                         .hero::after {
                                 content: '';
                                 position: absolute;
                                 inset: 0;
-                                background: radial-gradient(circle at 15% 25%, rgba(59, 130, 246, 0.28), transparent 45%),
-                                        radial-gradient(circle at 85% 10%, rgba(16, 185, 129, 0.2), transparent 40%);
+                                background: radial-gradient(circle at 20% 25%, rgba(59, 130, 246, 0.35), transparent 45%),
+                                        radial-gradient(circle at 85% 10%, rgba(16, 185, 129, 0.18), transparent 40%);
                                 mix-blend-mode: screen;
                                 opacity: 0.85;
                         }
@@ -273,40 +175,41 @@ const tools = [
                                 gap: 3rem;
                         }
                         .hero__content {
-                                max-width: min(640px, 100%);
+                                max-width: min(680px, 100%);
                         }
                         .hero__eyebrow {
                                 letter-spacing: 0.3em;
                                 text-transform: uppercase;
                                 font-size: 0.85rem;
-                                color: rgba(255, 255, 255, 0.7);
+                                color: rgba(255, 255, 255, 0.65);
                         }
                         .hero__headline {
                                 margin: 1rem 0 1.5rem;
-                                font-size: clamp(3rem, 6vw, 4.5rem);
+                                font-size: clamp(3rem, 6vw, 4.8rem);
                                 letter-spacing: -0.02em;
                                 color: #fff;
                         }
                         .hero__lede {
                                 font-size: 1.2rem;
-                                color: rgba(255, 255, 255, 0.8);
-                                margin-bottom: 2.5rem;
+                                color: rgba(255, 255, 255, 0.78);
+                                max-width: 60ch;
                         }
                         .hero-actions {
                                 display: flex;
                                 flex-wrap: wrap;
                                 gap: 1rem;
+                                margin-top: 2.5rem;
                         }
-                        .hero-actions .button {
+                        .hero .button {
                                 box-shadow: 0 24px 45px rgba(37, 99, 235, 0.35);
                         }
-                        .hero-actions .button--ghost {
+                        .hero .button--ghost {
                                 color: #fff;
-                                border: 1px solid rgba(255, 255, 255, 0.4);
+                                border: 1px solid rgba(255, 255, 255, 0.6);
                                 background: transparent;
                         }
-                        .hero-actions .button--ghost:hover {
-                                background: rgba(255, 255, 255, 0.16);
+                        .hero .button--ghost:hover {
+                                background: rgba(255, 255, 255, 0.18);
                         }
                         .hero__status {
                                 display: flex;
@@ -318,9 +221,9 @@ const tools = [
                                 position: relative;
                                 padding: 1.5rem 2rem;
                                 border-radius: 18px;
-                                background: rgba(15, 23, 42, 0.75);
-                                border: 1px solid rgba(148, 163, 184, 0.18);
-                                backdrop-filter: blur(14px);
+                                background: rgba(15, 23, 42, 0.7);
+                                border: 1px solid rgba(148, 163, 184, 0.2);
+                                backdrop-filter: blur(12px);
                                 display: grid;
                                 gap: 0.35rem;
                                 min-width: min(320px, 100%);
@@ -328,10 +231,6 @@ const tools = [
                         .hero__status-card strong {
                                 color: #fff;
                                 font-size: 1.25rem;
-                        }
-                        main {
-                                width: 100%;
-                                padding: 0 0 5rem;
                         }
                         .page-grid {
                                 width: min(1200px, calc(100% - 3rem));
@@ -358,6 +257,38 @@ const tools = [
                                 color: rgba(var(--gray-dark), 0.6);
                                 margin: 0;
                         }
+                        .metrics-grid {
+                                display: grid;
+                                gap: 1.5rem;
+                                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                        }
+                        .metric {
+                                border-radius: 20px;
+                                padding: 1.75rem;
+                                background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.18), rgba(37, 99, 235, 0.05));
+                                border: 1px solid rgba(37, 99, 235, 0.12);
+                                display: grid;
+                                gap: 0.5rem;
+                        }
+                        .metric-value {
+                                font-size: clamp(2.25rem, 4vw, 3rem);
+                                color: rgb(15, 23, 42);
+                                font-weight: 700;
+                                letter-spacing: -0.03em;
+                        }
+                        .capabilities-grid {
+                                display: grid;
+                                gap: 1.5rem;
+                                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                        }
+                        .capability-card {
+                                border-radius: 22px;
+                                border: 1px solid rgba(15, 23, 42, 0.08);
+                                padding: 2rem;
+                                background: linear-gradient(140deg, rgba(15, 23, 42, 0.05), rgba(15, 23, 42, 0));
+                                display: grid;
+                                gap: 0.75rem;
+                        }
                         .projects-grid {
                                 display: grid;
                                 gap: 2rem;
@@ -369,7 +300,7 @@ const tools = [
                                 padding: 2rem;
                                 display: grid;
                                 gap: 1rem;
-                                background: linear-gradient(140deg, rgba(15, 23, 42, 0.04), rgba(15, 23, 42, 0));
+                                background: linear-gradient(140deg, rgba(37, 99, 235, 0.12), rgba(37, 99, 235, 0));
                         }
                         .project-card strong {
                                 color: rgb(var(--black));
@@ -391,25 +322,6 @@ const tools = [
                                 font-weight: 600;
                                 text-transform: uppercase;
                                 letter-spacing: 0.08em;
-                        }
-                        .metrics-grid {
-                                display: grid;
-                                gap: 1.5rem;
-                                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-                        }
-                        .metric {
-                                border-radius: 20px;
-                                padding: 1.75rem;
-                                background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.18), rgba(37, 99, 235, 0.05));
-                                border: 1px solid rgba(37, 99, 235, 0.12);
-                                display: grid;
-                                gap: 0.5rem;
-                        }
-                        .metric-value {
-                                font-size: clamp(2.25rem, 4vw, 3rem);
-                                color: rgb(15, 23, 42);
-                                font-weight: 700;
-                                letter-spacing: -0.03em;
                         }
                         .focus-grid {
                                 display: grid;
@@ -439,41 +351,23 @@ const tools = [
                         }
                         .focus-panel {
                                 border-radius: 22px;
-                                border: 1px solid rgba(15, 23, 42, 0.08);
-                                padding: 2rem;
-                                background: white;
-                                box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
-                                display: none;
+                                border: 1px solid rgba(37, 99, 235, 0.15);
+                                background: linear-gradient(140deg, rgba(37, 99, 235, 0.15), rgba(37, 99, 235, 0.05));
+                                padding: clamp(2rem, 5vw, 3rem);
+                                display: grid;
                                 gap: 1rem;
                         }
-                        .focus-panel[aria-hidden='false'] {
-                                display: grid;
-                        }
-                        .capabilities-grid {
+                        .experience-list {
                                 display: grid;
                                 gap: 1.5rem;
-                                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
                         }
-                        .capability-card {
-                                border-radius: 18px;
-                                padding: 1.75rem;
-                                border: 1px solid rgba(15, 23, 42, 0.08);
-                                background: #f8fafc;
+                        .experience-item {
+                                border-left: 3px solid rgba(37, 99, 235, 0.4);
+                                padding-left: 1.25rem;
                                 display: grid;
-                                gap: 0.75rem;
+                                gap: 0.35rem;
                         }
-                        .timeline {
-                                display: grid;
-                                gap: 2rem;
-                        }
-                        .timeline__item {
-                                border-left: 3px solid rgba(37, 99, 235, 0.35);
-                                padding-left: 1.5rem;
-                        }
-                        .timeline__item h3 {
-                                margin-bottom: 0.3rem;
-                        }
-                        .testimonials {
+                        .testimonials-grid {
                                 display: grid;
                                 gap: 1.5rem;
                                 grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -481,53 +375,54 @@ const tools = [
                         .testimonial {
                                 border-radius: 20px;
                                 padding: 2rem;
-                                background: linear-gradient(140deg, rgba(15, 23, 42, 0.08), rgba(15, 23, 42, 0));
+                                background: linear-gradient(150deg, rgba(15, 23, 42, 0.08), rgba(15, 23, 42, 0));
                                 border: 1px solid rgba(15, 23, 42, 0.08);
                                 display: grid;
                                 gap: 1rem;
                         }
-                        .tools-list {
+                        .writing-list {
                                 display: grid;
-                                gap: 0.75rem;
-                                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-                        }
-                        .writing-grid {
-                                display: grid;
-                                gap: 1.5rem;
-                                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                                gap: 1.75rem;
                         }
                         .writing-card {
-                                border-radius: 18px;
+                                border-radius: 20px;
                                 padding: 1.75rem;
-                                border: 1px solid rgba(15, 23, 42, 0.08);
                                 background: #f8fafc;
+                                border: 1px solid rgba(15, 23, 42, 0.08);
+                                display: grid;
+                                gap: 0.5rem;
+                        }
+                        .writing-card a {
+                                font-weight: 600;
+                                color: var(--accent);
+                                text-decoration: none;
+                                display: inline-flex;
+                                gap: 0.35rem;
+                                align-items: center;
+                        }
+                        .tool-grid {
                                 display: grid;
                                 gap: 0.75rem;
-                                text-decoration: none;
-                                color: inherit;
+                                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
                         }
-                        .writing-card:hover {
-                                border-color: rgba(37, 99, 235, 0.4);
-                                box-shadow: 0 20px 40px rgba(37, 99, 235, 0.12);
-                        }
-                        .contact-card {
-                                display: grid;
-                                gap: 1.25rem;
-                                border-radius: 20px;
-                                padding: 2.5rem;
-                                background: linear-gradient(140deg, rgba(37, 99, 235, 0.15), rgba(37, 99, 235, 0.05));
-                                border: 1px solid rgba(37, 99, 235, 0.2);
+                        .tool {
+                                padding: 0.75rem 1rem;
+                                border-radius: 12px;
+                                background: rgba(15, 23, 42, 0.06);
+                                font-weight: 600;
+                                color: rgb(15, 23, 42);
                                 text-align: center;
-                        }
-                        .contact-card .button {
-                                justify-self: center;
                         }
                         @media (max-width: 900px) {
                                 .hero {
-                                        padding: clamp(5rem, 15vw, 7rem) 0 4rem;
+                                        min-height: auto;
+                                        padding-bottom: 4rem;
                                 }
                                 .hero__status {
                                         flex-direction: column;
+                                }
+                                .page-grid {
+                                        margin-top: -3rem;
                                 }
                                 .focus-grid {
                                         grid-template-columns: 1fr;
@@ -540,278 +435,130 @@ const tools = [
                                 .focus-toggles button {
                                         min-width: 220px;
                                 }
-                                .page-grid {
-                                        margin-top: -3rem;
-                                }
                         }
-                        @media (max-width: 600px) {
+                        @media (max-width: 640px) {
                                 .hero__headline {
-                                        font-size: clamp(2.5rem, 8vw, 3.25rem);
+                                        font-size: clamp(2.5rem, 8vw, 3.4rem);
                                 }
                                 .hero__lede {
                                         font-size: 1.05rem;
-                                background: radial-gradient(circle at 10% 10%, rgba(59, 130, 246, 0.25), transparent 45%),
-                                        radial-gradient(circle at 90% 20%, rgba(56, 189, 248, 0.2), transparent 40%);
-                                mix-blend-mode: screen;
-                                opacity: 0.85;
-                        }
-                        .hero__content {
-                                position: relative;
-                                max-width: min(640px, 90%);
-                                z-index: 1;
-                        }
-                        .hero__content h1 {
-                                margin-bottom: 1.5rem;
-                                color: #fff;
-                                font-size: clamp(3rem, 6vw, 4.75rem);
-                                letter-spacing: -0.02em;
-                        }
-                        .hero__content p {
-                                font-size: 1.2rem;
-                                color: rgba(255, 255, 255, 0.78);
-                                max-width: 52ch;
-                        }
-                        .hero .eyebrow {
-                                color: rgba(255, 255, 255, 0.65);
-                                letter-spacing: 0.24em;
-                                margin-bottom: 1.25rem;
-                        }
-                        .hero-actions {
-                                display: flex;
-                                gap: 1rem;
-                                flex-wrap: wrap;
-                                margin-top: 2.5rem;
-                        }
-                        .hero .button {
-                                box-shadow: 0 24px 45px rgba(37, 99, 235, 0.3);
-                        }
-                        .hero .button--ghost {
-                                color: #fff;
-                                box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.6);
-                        }
-                        .hero .button--ghost:hover {
-                                background: rgba(255, 255, 255, 0.18);
-                                color: #fff;
-                        }
-                        .page-sections {
-                                width: min(1100px, calc(100% - 2rem));
-                                margin: -4.5rem auto 0;
-                                padding: 0 0 5rem;
-                                display: grid;
-                                gap: 4rem;
-                        }
-                        .page-sections .section {
-                                margin: 0;
-                                padding: clamp(2.5rem, 6vw, 3.5rem);
-                                background: white;
-                                border-radius: 28px;
-                                box-shadow: var(--box-shadow);
-                        }
-                        .projects-grid {
-                                margin-top: 2rem;
-                        }
-                        .project-card {
-                                display: grid;
-                                gap: 1.25rem;
-                                background: white;
-                                border-radius: 22px;
-                                padding: 2.5rem;
-                                box-shadow: var(--box-shadow);
-                        }
-                        .project-card h3 {
-                                margin: 0;
-                        }
-                        .project-card .tag {
-                                margin-right: 0.5rem;
-                        }
-                        .project-meta {
-                                display: flex;
-                                flex-wrap: wrap;
-                                gap: 0.5rem;
-                                margin-top: -0.25rem;
-                        }
-                        .services-grid {
-                                margin-top: 2rem;
-                        }
-                        .services-grid .card {
-                                min-height: 220px;
-                        }
-                        .tools-panel {
-                                background: white;
-                                border-radius: 20px;
-                                padding: 2rem;
-                                box-shadow: var(--box-shadow);
-                                display: grid;
-                                gap: 1.25rem;
-                        }
-                        .timeline {
-                                margin-top: 2rem;
-                        }
-                        .testimonials {
-                                margin-top: 2rem;
-                                display: grid;
-                                gap: 2rem;
-                                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-                        }
-                        .writing-grid {
-                                margin-top: 2rem;
-                                display: grid;
-                                gap: 2rem;
-                                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-                        }
-                        .writing-card {
-                                background: white;
-                                border-radius: 18px;
-                                padding: 2rem;
-                                box-shadow: var(--box-shadow);
-                                display: grid;
-                                gap: 1rem;
-                        }
-                        .writing-card h3 {
-                                margin: 0;
-                        }
-                        .writing-card a {
-                                text-decoration: none;
-                                color: inherit;
-                        }
-                        .writing-card a:hover h3 {
-                                color: var(--accent);
-                        }
-                        .writing-card time {
-                                color: rgb(var(--gray));
-                                font-size: 0.95rem;
-                        }
-                        .writing-card p {
-                                color: rgb(var(--gray));
-                        }
-                        @media (max-width: 900px) {
-                                .hero {
-                                        min-height: 75vh;
-                                }
-                        }
-                        @media (max-width: 720px) {
-                                .hero {
-                                        padding: 6rem 1.5rem 4rem;
-                                        text-align: center;
-                                        justify-content: center;
-                                }
-                                .hero__content {
-                                        margin: 0 auto;
-                                }
-                                .hero-actions {
-                                        justify-content: center;
-                                }
-                                .hero__status-card {
-                                        min-width: 100%;
                                 }
                                 .card-section {
                                         padding: 2rem;
-                                .page-sections {
-                                        margin-top: -3rem;
-                                        gap: 3rem;
                                 }
                         }
                 </style>
         </head>
         <body>
                 <Header />
-                <section class="hero" id="top">
-                        <div class="hero__inner">
-                                <div class="hero__content">
-                                        <p class="hero__eyebrow">Ahmed · Principal Platform Engineer</p>
-                                        <h1 class="hero__headline">I build reliable systems for ambitious missions.</h1>
-                                        <p class="hero__lede">
-                                                From orbital telemetry to real-time robotics, I help teams deliver platforms that stay resilient when the launch window opens. My work spans TypeScript, Rust, and cloud infrastructure with a focus on measurable outcomes.
-                                        </p>
-                                        <div class="hero-actions">
-                                                <a class="button" href="/projects">Browse projects</a>
-                                                <a class="button button--ghost" href="#contact">Start a conversation</a>
-                                        </div>
-                                </div>
-                                <div class="hero__status">
-                                        <div class="hero__status-card">
-                                                <strong>Currently leading</strong>
-                                                <span>Mission Control engineering @ Lumina Orbit</span>
-                                        </div>
-                                        <div class="hero__status-card">
-                                                <strong>Availability</strong>
-                                                <span>Accepting select advisory partnerships for 2025</span>
-                                        </div>
-                                </div>
-                        </div>
-                </section>
                 <main>
+                        <section class="hero">
+                                <div class="hero__inner">
+                                        <div class="hero__content">
+                                                <p class="hero__eyebrow">Platform engineering leader</p>
+                                                <h1 class="hero__headline">Operating the systems that keep ambitious teams moving.</h1>
+                                                <p class="hero__lede">
+                                                        I architect resilient platforms, robotics stacks, and developer experiences that turn complex missions into repeatable wins. Outcome-driven, telemetry-obsessed, and happiest when the release checklist reads “all green.”
+                                                </p>
+                                                <div class="hero-actions">
+                                                        <a class="button" href="mailto:hello@ahmed.dev">Book a discovery call</a>
+                                                        <a class="button button--ghost" href="/projects">Browse case studies</a>
+                                                </div>
+                                        </div>
+                                        <div class="hero__status">
+                                                <div class="hero__status-card">
+                                                        <span class="eyebrow">Current mission</span>
+                                                        <strong>Principal Platform Engineer · Lumina Orbit</strong>
+                                                        <p>Building autonomous telemetry and incident response for a global LEO fleet.</p>
+                                                </div>
+                                                <div class="hero__status-card">
+                                                        <span class="eyebrow">Availability</span>
+                                                        <strong>New engagements · July 2024</strong>
+                                                        <p>Advisory retainers & fractional leadership for platform and DX initiatives.</p>
+                                                </div>
+                                        </div>
+                                </div>
+                        </section>
                         <div class="page-grid">
-                                <section class="card-section" id="work">
+                                <section class="card-section" aria-labelledby="metrics-title">
                                         <header class="section-header">
-                                                <p class="eyebrow">Selected launches</p>
-                                                <h2>Recent engineering work with measurable signal.</h2>
+                                                <p class="eyebrow">Signal, not noise</p>
+                                                <h2 id="metrics-title">Metrics from the last few missions.</h2>
+                                        </header>
+                                        <div class="metrics-grid">
+                                                {signalMetrics.map((metric) => (
+                                                        <div class="metric">
+                                                                <span class="metric-value">{metric.value.toLocaleString(undefined, {
+                                                                        minimumFractionDigits: metric.decimals,
+                                                                        maximumFractionDigits: metric.decimals,
+                                                                })}{metric.suffix}</span>
+                                                                <span>{metric.label}</span>
+                                                        </div>
+                                                ))}
+                                        </div>
+                                </section>
+
+                                <section class="card-section" aria-labelledby="capabilities-title">
+                                        <header class="section-header">
+                                                <p class="eyebrow">Where I add leverage</p>
+                                                <h2 id="capabilities-title">Capabilities built from a decade in the arena.</h2>
+                                        </header>
+                                        <div class="capabilities-grid">
+                                                {capabilities.map((capability) => (
+                                                        <article class="capability-card">
+                                                                <h3>{capability.title}</h3>
+                                                                <p>{capability.description}</p>
+                                                        </article>
+                                                ))}
+                                        </div>
+                                </section>
+
+                                <section class="card-section" aria-labelledby="projects-title" id="work">
+                                        <header class="section-header">
+                                                <p class="eyebrow">Selected projects</p>
+                                                <h2 id="projects-title">Case studies that show the signal.</h2>
                                                 <p>
-                                                        A sampling of end-to-end builds blending strategy, architecture, and hands-on engineering. Dive into the full archive for more detail on the process and telemetry.
+                                                        These highlights pair architecture choices with the outcomes they unlocked. Explore more in the
+                                                        <a href="/projects">project log</a>.
                                                 </p>
                                         </header>
                                         <div class="projects-grid">
                                                 {featuredProjects.map((project) => (
                                                         <article class="project-card">
-                                                                <h3>{project.title}</h3>
-                                                                <p>{project.summary}</p>
+                                                                <header>
+                                                                        <h3>{project.title}</h3>
+                                                                        <p><strong>{project.year}</strong> · {project.summary}</p>
+                                                                </header>
+                                                                <p>{project.description}</p>
                                                                 <p><strong>{project.outcome}</strong></p>
                                                                 <footer>
                                                                         {project.tags.map((tag) => (
                                                                                 <span class="tag">{tag}</span>
                                                                         ))}
                                                                 </footer>
-                                                                {project.link && (
-                                                                        <a class="link-arrow" href={project.link}>
-                                                                                Read the full story
-                                                                                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                                                                                        <path fill="currentColor" d="M13.172 12 8.222 7.05l1.414-1.414L16 12l-6.364 6.364-1.414-1.414z" />
-                                                                                </svg>
-                                                                        </a>
-                                                                )}
-                                                        </article>
-                                                ))}
-                                        </div>
-                                        <a class="button button--ghost" href="/projects">View the full project log</a>
-                                </section>
-
-                                <section class="card-section" id="signals">
-                                        <header class="section-header">
-                                                <p class="eyebrow">Telemetry</p>
-                                                <h2>Interactive mission metrics.</h2>
-                                                <p>
-                                                        Hover to preview highlights and scroll to animate live counters captured from recent engagements.
-                                                </p>
-                                        </header>
-                                        <div class="metrics-grid" data-counter-root>
-                                                {signalMetrics.map((metric) => (
-                                                        <article class="metric">
-                                                                <span class="metric-value" data-counter data-decimals={metric.decimals} data-suffix={metric.suffix} data-target={metric.value}>{metric.value}</span>
-                                                                <span>{metric.label}</span>
                                                         </article>
                                                 ))}
                                         </div>
                                 </section>
 
-                                <section class="card-section" id="focus">
+                                <section class="card-section" aria-labelledby="focus-title" id="focus">
                                         <header class="section-header">
-                                                <p class="eyebrow">Operating modes</p>
-                                                <h2>How I approach complex engineering problems.</h2>
-                                                <p>
-                                                        Toggle through the modes to see where I lean in across discovery, delivery, and enablement.
-                                                </p>
+                                                <p class="eyebrow">Operating model</p>
+                                                <h2 id="focus-title">How I approach unsolved problems.</h2>
+                                                <p>Three focus modes keep the work rigorous, humane, and fast enough to matter.</p>
                                         </header>
-                                        <div class="focus-grid">
-                                                <div class="focus-toggles" role="tablist" aria-label="Engineering focus modes">
+                                        <div class="focus-grid" data-focus>
+                                                <div class="focus-toggles" role="tablist" aria-label="Focus modes">
                                                         {focusModes.map((mode, index) => (
                                                                 <button
                                                                         type="button"
                                                                         role="tab"
-                                                                        data-focus={mode.id}
                                                                         aria-selected={index === 0 ? 'true' : 'false'}
                                                                         aria-pressed={index === 0 ? 'true' : 'false'}
                                                                         aria-controls={`focus-panel-${mode.id}`}
                                                                         id={`focus-tab-${mode.id}`}
+                                                                        data-focus-toggle
+                                                                        data-target={mode.id}
                                                                 >
                                                                         {mode.label}
                                                                 </button>
@@ -819,48 +566,30 @@ const tools = [
                                                 </div>
                                                 <div>
                                                         {focusModes.map((mode, index) => (
-                                                                <div
+                                                                <article
                                                                         class="focus-panel"
-                                                                        id={`focus-panel-${mode.id}`}
                                                                         role="tabpanel"
+                                                                        id={`focus-panel-${mode.id}`}
                                                                         aria-labelledby={`focus-tab-${mode.id}`}
-                                                                        aria-hidden={index === 0 ? 'false' : 'true'}
                                                                         data-focus-panel={mode.id}
+                                                                        hidden={index !== 0}
                                                                 >
                                                                         <h3>{mode.headline}</h3>
                                                                         <p>{mode.description}</p>
-                                                                </div>
+                                                                </article>
                                                         ))}
                                                 </div>
                                         </div>
                                 </section>
 
-                                <section class="card-section" id="services">
+                                <section class="card-section" aria-labelledby="experience-title">
                                         <header class="section-header">
-                                                <p class="eyebrow">Capabilities</p>
-                                                <h2>Ways we can partner.</h2>
-                                                <p>
-                                                        Engagements flex from embedded leadership to targeted sprints. Whatever the shape, we anchor on outcomes, instrumentation, and healthy teams.
-                                                </p>
+                                                <p class="eyebrow">Flight log</p>
+                                                <h2 id="experience-title">Experience that shaped the toolkit.</h2>
                                         </header>
-                                        <div class="capabilities-grid">
-                                                {capabilities.map((capability) => (
-                                                        <div class="capability-card">
-                                                                <h3>{capability.title}</h3>
-                                                                <p>{capability.description}</p>
-                                                        </div>
-                                                ))}
-                                        </div>
-                                </section>
-
-                                <section class="card-section" id="experience">
-                                        <header class="section-header">
-                                                <p class="eyebrow">Trajectory</p>
-                                                <h2>Experience across product, platform, and robotics.</h2>
-                                        </header>
-                                        <div class="timeline">
+                                        <div class="experience-list">
                                                 {experience.map((item) => (
-                                                        <article class="timeline__item">
+                                                        <article class="experience-item">
                                                                 <h3>{item.role}</h3>
                                                                 <p><strong>{item.company}</strong> · {item.period}</p>
                                                                 <p>{item.details}</p>
@@ -869,214 +598,55 @@ const tools = [
                                         </div>
                                 </section>
 
-                                <section class="card-section" id="testimonials">
+                                <section class="card-section" aria-labelledby="testimonials-title">
                                         <header class="section-header">
-                                                <p class="eyebrow">Signals from collaborators</p>
-                                                <h2>What teams say after launch.</h2>
+                                                <p class="eyebrow">Testimonials</p>
+                                                <h2 id="testimonials-title">Trusted by leaders shipping complex products.</h2>
                                         </header>
-                                        <div class="testimonials">
+                                        <div class="testimonials-grid">
                                                 {testimonials.map((testimonial) => (
-                                                        <figure class="testimonial">
-                                                                <blockquote>“{testimonial.quote}”</blockquote>
-                                                                <figcaption>
-                                                                        — {testimonial.name}, {testimonial.title}
-                                                                </figcaption>
-                                                        </figure>
+                                                        <blockquote class="testimonial">
+                                                                <p>“{testimonial.quote}”</p>
+                                                                <footer>
+                                                                        <strong>{testimonial.name}</strong>
+                                                                        <div>{testimonial.title}</div>
+                                                                </footer>
+                                                        </blockquote>
                                                 ))}
                                         </div>
                                 </section>
 
-                                <section class="card-section" id="toolbox">
-                                        <header class="section-header">
-                                                <p class="eyebrow">Tooling</p>
-                                                <h2>Stacks I reach for often.</h2>
-                                                <p>
-                                                        Comfortable pairing with your existing toolchain or introducing modern observability, deployment, and data streaming practices as we go.
-                                                </p>
-                                        </header>
-                                        <div class="tools-list">
-                                                {tools.map((tool) => (
-                                                        <span class="tag">{tool}</span>
-                                                ))}
-                                        </div>
-                                </section>
-
-                                <section class="card-section" id="writing">
+                                <section class="card-section" aria-labelledby="writing-title" id="writing">
                                         <header class="section-header">
                                                 <p class="eyebrow">Writing</p>
-                                                <h2>Latest thinking from the field.</h2>
+                                                <h2 id="writing-title">Latest thinking from the engineering journal.</h2>
                                         </header>
-                                        <div class="writing-grid">
+                                        <div class="writing-list">
                                                 {featuredPosts.map((post) => (
-                                                        <a class="writing-card" href={post.slug}>
+                                                        <article class="writing-card">
                                                                 <h3>{post.data.title}</h3>
-                                                                <time datetime={post.data.pubDate.toISOString()}>
-                                                                        {post.data.pubDate.toLocaleDateString('en-US', {
-                                                                                month: 'short',
-                <main>
-                        <section class="hero">
-                                <div class="hero__content">
-                                        <p class="eyebrow">Jordan Mitchell · Product Designer</p>
-                                        <h1>Hi, I&rsquo;m Jordan Mitchell.</h1>
-                                        <p>
-                                                I&rsquo;m an inclusive product design leader focused on aerospace, health, and mission-critical
-                                                tools. I translate complex systems into intuitive experiences that help teams move faster and
-                                                make better decisions.
-                                        </p>
-                                        <div class="hero-actions">
-                                                <a class="button" href="#work">View work</a>
-                                                <a class="button button--ghost" href="mailto:hello@jordanmitchell.design">Get in touch</a>
-                                        </div>
-                                </div>
-                        </section>
-
-                        <div class="page-sections">
-                                <section id="work" class="section">
-                                        <div class="section-intro">
-                                                <p class="eyebrow">Selected work</p>
-                                                <h2>Recent outcomes from embedded partnerships.</h2>
-                                        <p>
-                                                Each engagement blends research, prototyping, and facilitation to reduce uncertainty.
-                                                Dive into the full case studies for a look at the process, decisions, and measurable
-                                                impact.
-                                        </p>
-                                </div>
-                                <div class="projects-grid grid grid--two">
-                                        {projects.map((project) => (
-                                                <article class="project-card">
-                                                        <header>
-                                                                <h3>{project.title}</h3>
-                                                                <p>{project.summary}</p>
-                                                        </header>
-                                                        <p><strong>{project.outcome}</strong></p>
-                                                        <div class="project-meta">
-                                                                {project.tags.map((tag) => (
-                                                                        <span class="tag">{tag}</span>
-                                                                ))}
-                                                        </div>
-                                                        <a class="link-arrow" href={project.link}
-                                                                >Read the case study
-                                                                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                                                                        <path
-                                                                                fill="currentColor"
-                                                                                d="M13.172 12 8.222 7.05l1.414-1.414L16 12l-6.364 6.364-1.414-1.414z"
-                                                                        />
-                                                                </svg>
-                                                        </a>
-                                                </article>
-                                        ))}
-                                </div>
-                                </section>
-
-                                <section id="services" class="section">
-                                        <div class="section-intro">
-                                                <p class="eyebrow">How we can collaborate</p>
-                                                <h2>Flexible engagements tailored to your stage.</h2>
-                                        <p>
-                                                Whether you need a thought partner to shape vision or an embedded leader to ship the
-                                                next release, we can design an engagement that meets you where you are.
-                                        </p>
-                                </div>
-                                <div class="services-grid grid grid--two">
-                                        {services.map((service) => (
-                                                <div class="card">
-                                                        <h3>{service.title}</h3>
-                                                        <p>{service.description}</p>
-                                                </div>
-                                        ))}
-                                </div>
-                                <div class="tools-panel">
-                                        <h3>Tools in heavy rotation</h3>
-                                        <div class="badge-list">
-                                                {tools.map((tool) => (
-                                                        <span class="tag">{tool}</span>
-                                                ))}
-                                        </div>
-                                </div>
-                                </section>
-
-                                <section class="section">
-                                        <div class="section-intro">
-                                                <p class="eyebrow">Experience</p>
-                                                <h2>Over a decade guiding teams from vision to launch.</h2>
-                                        <p>
-                                                Collaboration is my favorite tool. I create clarity, document decisions, and invite the
-                                                right voices into the room at the right moment.
-                                        </p>
-                                </div>
-                                <div class="timeline">
-                                        {experience.map((item) => (
-                                                <article class="timeline__item">
-                                                        <h3>{item.role}</h3>
-                                                        <p><strong>{item.company}</strong> · {item.period}</p>
-                                                        <p>{item.details}</p>
-                                                </article>
-                                        ))}
-                                </div>
-                                </section>
-
-                                <section class="section">
-                                        <div class="section-intro">
-                                                <p class="eyebrow">Praise</p>
-                                                <h2>Trusted by product leaders across industries.</h2>
-                                        <p>
-                                                Partnerships are personal. These teams invited me in when the stakes were high — here’s
-                                                what they had to say about the collaboration.
-                                        </p>
-                                </div>
-                                <div class="testimonials">
-                                        {testimonials.map((item) => (
-                                                <blockquote class="testimonial">
-                                                        <p>“{item.quote}”</p>
-                                                        <cite>{item.name}</cite>
-                                                        <span>{item.title}</span>
-                                                </blockquote>
-                                        ))}
-                                </div>
-                                </section>
-
-                                <section id="writing" class="section">
-                                        <div class="section-intro">
-                                                <p class="eyebrow">Latest writing</p>
-                                                <h2>Notes on process, leadership, and inclusive design.</h2>
-                                        <p>
-                                                Long-form reflections on the craft of building products. Subscribe to the RSS feed to
-                                                get new posts in your reader of choice.
-                                        </p>
-                                </div>
-                                <div class="writing-grid">
-                                        {featuredPosts.map((post) => (
-                                                <article class="writing-card">
-                                                        <a href={`/blog/${post.id}/`}>
-                                                                <time datetime={post.data.pubDate.toISOString()}>
-                                                                        {post.data.pubDate.toLocaleDateString('en-US', {
-                                                                                month: 'long',
-                                                                                day: 'numeric',
-                                                                                year: 'numeric',
-                                                                        })}
-                                                                </time>
                                                                 <p>{post.data.description}</p>
-                                                        </a>
+                                                                <a href={`/blog/${post.slug}/`}>
+                                                                        Read the post
+                                                                        <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18">
+                                                                                <path fill="currentColor" d="M13.172 12 8.222 7.05l1.414-1.414L16 12l-6.364 6.364-1.414-1.414z" />
+                                                                        </svg>
+                                                                </a>
+                                                        </article>
                                                 ))}
                                         </div>
                                 </section>
 
-                                <section class="card-section" id="contact">
+                                <section class="card-section" aria-labelledby="tools-title">
                                         <header class="section-header">
-                                                <p class="eyebrow">Contact</p>
-                                                <h2>Let’s build your next launch window.</h2>
+                                                <p class="eyebrow">Toolkit</p>
+                                                <h2 id="tools-title">Frameworks, languages, and platforms I reach for daily.</h2>
+                                                <p>From kernel space to browser runtime, the stack is wide on purpose.</p>
                                         </header>
-                                        <div class="contact-card">
-                                                <p>
-                                                        Whether you need an engineering leader to steer a mission-critical delivery or a technical partner for a focused build, I’m excited to hear what you’re launching next.
-                                                </p>
-                                                <a class="button" href="mailto:hello@ahmed.dev">hello@ahmed.dev</a>
-                                                <span>Based in Seattle · Remote-friendly across GMT-8 to GMT-2</span>
-                                                                <h3>{post.data.title}</h3>
-                                                                <p>{post.data.description}</p>
-                                                        </a>
-                                                </article>
-                                        ))}
+                                        <div class="tool-grid">
+                                                {tools.map((tool) => (
+                                                        <span class="tool">{tool}</span>
+                                                ))}
                                         </div>
                                 </section>
                         </div>
@@ -1084,68 +654,32 @@ const tools = [
                 <Footer />
                 <script is:inline>
                         document.addEventListener('DOMContentLoaded', () => {
-                                const counters = document.querySelectorAll('[data-counter]');
-                                const counterRoot = document.querySelector('[data-counter-root]');
-                                if (counterRoot && counters.length > 0) {
-                                        const observer = new IntersectionObserver(
-                                                (entries) => {
-                                                        entries.forEach((entry) => {
-                                                                if (entry.isIntersecting) {
-                                                                        counters.forEach((counter) => {
-                                                                                if (counter.dataset.animated) return;
-                                                                                const target = Number(counter.dataset.target || '0');
-                                                                                const decimals = Number(counter.dataset.decimals || '0');
-                                                                                const suffix = counter.dataset.suffix || '';
-                                                                                const duration = 1500;
-                                                                                const start = performance.now();
-                                                                                const formatValue = (value) => value.toFixed(decimals);
-                                                                                const step = (timestamp) => {
-                                                                                        const progress = Math.min((timestamp - start) / duration, 1);
-                                                                                        const eased = 1 - Math.pow(1 - progress, 3);
-                                                                                        const current = target * eased;
-                                                                                        counter.textContent = `${formatValue(current)}${suffix}`;
-                                                                                        if (progress < 1) {
-                                                                                                requestAnimationFrame(step);
-                                                                                        } else {
-                                                                                                counter.textContent = `${formatValue(target)}${suffix}`;
-                                                                                                counter.dataset.animated = 'true';
-                                                                                        }
-                                                                                };
-                                                                                requestAnimationFrame(step);
-                                                                        });
-                                                                        observer.disconnect();
-                                                                }
-                                                        });
-                                                },
-                                                { threshold: 0.35 },
-                                        );
-                                        observer.observe(counterRoot);
-                                }
+                                const toggleContainer = document.querySelector('[data-focus]');
+                                if (!toggleContainer) return;
+                                const buttons = Array.from(toggleContainer.querySelectorAll('[data-focus-toggle]'));
+                                const panels = Array.from(toggleContainer.querySelectorAll('[data-focus-panel]'));
 
-                                const focusButtons = Array.from(document.querySelectorAll('[data-focus]'));
-                                const focusPanels = Array.from(document.querySelectorAll('[data-focus-panel]'));
-                                if (focusButtons.length && focusPanels.length) {
-                                        const activate = (id) => {
-                                                focusButtons.forEach((button) => {
-                                                        const isActive = button.dataset.focus === id;
-                                                        button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-                                                        button.setAttribute('aria-selected', isActive ? 'true' : 'false');
-                                                });
-                                                focusPanels.forEach((panel) => {
-                                                        const isActive = panel.dataset.focusPanel === id;
-                                                        panel.setAttribute('aria-hidden', isActive ? 'false' : 'true');
-                                                });
-                                        };
-                                        focusButtons.forEach((button) => {
-                                                button.addEventListener('click', () => activate(button.dataset.focus));
-                                                button.addEventListener('keydown', (event) => {
-                                                        if (event.key === 'Enter' || event.key === ' ') {
-                                                                event.preventDefault();
-                                                                activate(button.dataset.focus);
-                                                        }
-                                                });
+                                const setActive = (id) => {
+                                        buttons.forEach((button) => {
+                                                const isActive = button.dataset.target === id;
+                                                button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+                                                button.setAttribute('aria-selected', isActive ? 'true' : 'false');
                                         });
-                                }
+                                        panels.forEach((panel) => {
+                                                const shouldShow = panel.dataset.focusPanel === id;
+                                                panel.toggleAttribute('hidden', !shouldShow);
+                                        });
+                                };
+
+                                buttons.forEach((button) => {
+                                        button.addEventListener('click', () => setActive(button.dataset.target));
+                                        button.addEventListener('keydown', (event) => {
+                                                if (event.key === 'Enter' || event.key === ' ') {
+                                                        event.preventDefault();
+                                                        setActive(button.dataset.target);
+                                                }
+                                        });
+                                });
                         });
                 </script>
         </body>

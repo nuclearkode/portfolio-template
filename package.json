@@ -1,12 +1,9 @@
 {
   "name": "portfolio-template",
-  "description": "Ahmed's engineering portfolio built with Astro.",
-  "private": true,
-  "private": true,
-  "description": "Jordan Mitchell's product design portfolio built with Astro.",
+  "description": "Ahmed Iskander's engineering portfolio built with Astro.",
   "private": true,
   "cloudflare": {
-    "label": "Product Design Portfolio",
+    "label": "Engineering Portfolio",
     "products": [
       "Workers"
     ],
