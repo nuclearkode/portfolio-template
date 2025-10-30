@@ -1,4 +1,4 @@
-# Jordan Mitchell · Engineering Portfolio
+# Ahmed · Engineering Portfolio
 
 This project is a bespoke portfolio for a principal platform engineer. It pairs Astro’s
 content collections with handcrafted layouts to showcase large-scale engineering programs,
@@ -38,16 +38,17 @@ long-form content in `src/content`, and tweak styles in `src/styles/global.css` 
 
 ## 🧰 Available scripts
 
-| Command           | Description                                |
-| :---------------- | :----------------------------------------- |
-| `npm run dev`     | Start the development server               |
+| Command           | Description                                 |
+| :---------------- | :------------------------------------------ |
+| `npm run dev`     | Start the development server                |
 | `npm run build`   | Generate a production-ready build in `dist` |
 | `npm run preview` | Preview the production build locally        |
 
 ## 📬 Deployment
 
-The site is optimized for static hosting and works great on Cloudflare Pages, Netlify, or
-Vercel. Build the project and upload the `dist/` directory to your platform of choice.
+The site ships as a static build and deploys cleanly to platforms such as Cloudflare Pages,
+Netlify, GitHub Pages, or Vercel. Run `npm run build` and upload the `dist/` directory to your
+platform of choice.
 
 ---
 

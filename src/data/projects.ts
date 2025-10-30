@@ -22,7 +22,7 @@ export const projects: Project[] = [
                 tags: ['TypeScript', 'WebGL', 'Event-Driven'],
                 year: 2024,
                 link: '/blog/atlas-dashboard-modernization/',
-                repo: 'https://github.com/jordan-mitchell/orbital-fleet-ops',
+                repo: 'https://github.com/ahmed-engineer/orbital-fleet-ops',
         },
         {
                 slug: 'adaptive-navigation-stack',
@@ -34,7 +34,7 @@ export const projects: Project[] = [
                 outcome: 'Cut pre-flight planning from 4 hours to 30 minutes with live mission rehearsal.',
                 tags: ['Rust', 'React', 'Robotics'],
                 year: 2023,
-                repo: 'https://github.com/jordan-mitchell/adaptive-nav-stack',
+                repo: 'https://github.com/ahmed-engineer/adaptive-nav-stack',
         },
         {
                 slug: 'relay-cloud-migration',
@@ -46,7 +46,7 @@ export const projects: Project[] = [
                 outcome: 'Saved $1.2M annually in infrastructure costs and dropped deploy time from hours to minutes.',
                 tags: ['Go', 'Kubernetes', 'DevOps'],
                 year: 2022,
-                repo: 'https://github.com/jordan-mitchell/relay-cloud',
+                repo: 'https://github.com/ahmed-engineer/relay-cloud',
         },
         {
                 slug: 'signal-lab-platform',
@@ -58,7 +58,7 @@ export const projects: Project[] = [
                 outcome: 'Enabled 5 teams to prototype waveforms 3x faster than desktop tooling.',
                 tags: ['WebAssembly', 'Astro', 'DSP'],
                 year: 2021,
-                repo: 'https://github.com/jordan-mitchell/signal-lab',
+                repo: 'https://github.com/ahmed-engineer/signal-lab',
         },
         {
                 slug: 'flux-insight-engine',
