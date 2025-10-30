@@ -3,48 +3,750 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { getCollection } from 'astro:content';
+import { projects } from '../data/projects';
+
+const posts = (await getCollection('blog')).sort(
+        (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const featuredPosts = posts.slice(0, 3);
+const featuredProjects = projects.slice(0, 3);
+
+const capabilities = [
+        {
+                title: 'Platform engineering',
+                description:
+                        'Designing resilient infrastructure, DX tooling, and guardrails so product teams can move fast without breaking mission-critical systems.',
+        },
+        {
+                title: 'Full-stack delivery',
+                description:
+                        'Shipping TypeScript, Rust, and Go services alongside modern web interfaces to connect deep tech to the humans operating it.',
+        },
+        {
+                title: 'Systems leadership',
+                description:
+                        'Coaching cross-functional squads, shaping technical strategy, and translating ambiguity into roadmaps grounded in outcomes.',
+        },
+        {
+                title: 'DevOps & observability',
+                description:
+                        'Standing up CI/CD, telemetry pipelines, and feedback loops that keep releases healthy long after launch week.',
+        },
+];
+
+const focusModes = [
+        {
+                id: 'systems',
+                label: 'Systems Thinking',
+                headline: 'Map the whole system before touching the code.',
+                description:
+                        'I start with architecture maps, failure drills, and stakeholder interviews to understand the forces around a problem. The result is a plan that scales with the business and the team operating it.',
+        },
+        {
+                id: 'delivery',
+                label: 'Outcome Delivery',
+                headline: 'Ship iteratively without sacrificing reliability.',
+                description:
+                        'From RFCs to rollout ladders, I keep feedback loops tight. We automate the boring parts, align on telemetry, and release in thin slices to derisk complexity.',
+        },
+        {
+                id: 'teams',
+                label: 'Team Enablement',
+                headline: 'Grow the humans alongside the stack.',
+                description:
+                        'Healthy teams build healthy products. I mentor engineers, design rituals that stick, and leave behind documentation that future hires can build from.',
+        },
+];
+
+const signalMetrics = [
+        { label: 'Uptime maintained post migrations', value: 99.995, suffix: '%', decimals: 3 },
+        { label: 'Incidents automated away', value: 84, suffix: '', decimals: 0 },
+        { label: 'Latency reduced across services', value: 37, suffix: '%', decimals: 0 },
+];
+
+const experience = [
+        {
+                role: 'Principal Platform Engineer',
+                company: 'Lumina Orbit',
+                period: '2021 — Present',
+                details:
+                        'Building a self-healing telemetry platform for satellite fleets. Partner closely with mission ops to ship features that stand up to orbital realities.',
+        },
+        {
+                role: 'Staff Software Engineer',
+                company: 'Northwind Labs',
+                period: '2017 — 2021',
+                details:
+                        'Launched robotics navigation systems, revamped the developer platform, and codified technical strategy as the company scaled 10x.',
+        },
+        {
+                role: 'Senior Full-stack Engineer',
+                company: 'Brightside Systems',
+                period: '2013 — 2017',
+                details:
+                        'Delivered modernization projects across finance and health portfolios with a focus on accessibility and resilient architecture.',
+        },
+];
+
+const testimonials = [
+        {
+                quote:
+                        'Ahmed is the engineer you call when the stakes are high. They guided our launch sequence, tuned the platform under pressure, and kept the team calm through it all.',
+                name: 'Casey Nguyen',
+                title: 'VP Engineering, Lumina Orbit',
+        },
+        {
+                quote:
+                        'We rebuilt our CI/CD with Ahmed in the lead. Deploy frequency jumped 5x, and our error budget is still intact six months later.',
+                name: 'Priya Desai',
+                title: 'Director of Engineering, Northwind Labs',
+        },
+];
+
+const tools = [
+        'TypeScript',
+        'Rust',
+        'Go',
+        'React',
+        'Astro',
+        'Node.js',
+        'PostgreSQL',
+        'Kafka',
+        'Terraform',
+        'Kubernetes',
+        'Grafana',
+        'WebGL',
+];
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+        <head>
+                <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+                <style>
+                        body {
+                                background: radial-gradient(circle at 10% -10%, rgba(37, 99, 235, 0.12), transparent 55%),
+                                        var(--sand);
+                        }
+                        .hero {
+                                position: relative;
+                                width: 100%;
+                                margin: 0;
+                                padding: clamp(6rem, 12vw, 9rem) 0;
+                                color: rgba(255, 255, 255, 0.88);
+                                overflow: hidden;
+                        }
+                        .hero::before {
+                                content: '';
+                                position: absolute;
+                                inset: 0;
+                                background:
+                                        linear-gradient(120deg, rgba(2, 6, 23, 0.95) 0%, rgba(15, 23, 42, 0.8) 55%, rgba(2, 6, 23, 0.96) 100%),
+                                        url('https://images.unsplash.com/photo-1523966211575-eb4a01e7dd51?auto=format&fit=crop&w=2400&q=80')
+                                                center / cover no-repeat;
+                                transform: scale(1.05);
+                                filter: saturate(1.1);
+                        }
+                        .hero::after {
+                                content: '';
+                                position: absolute;
+                                inset: 0;
+                                background: radial-gradient(circle at 15% 25%, rgba(59, 130, 246, 0.28), transparent 45%),
+                                        radial-gradient(circle at 85% 10%, rgba(16, 185, 129, 0.2), transparent 40%);
+                                mix-blend-mode: screen;
+                                opacity: 0.85;
+                        }
+                        .hero__inner {
+                                position: relative;
+                                width: min(1200px, calc(100% - 3rem));
+                                margin: 0 auto;
+                                display: grid;
+                                gap: 3rem;
+                        }
+                        .hero__content {
+                                max-width: min(640px, 100%);
+                        }
+                        .hero__eyebrow {
+                                letter-spacing: 0.3em;
+                                text-transform: uppercase;
+                                font-size: 0.85rem;
+                                color: rgba(255, 255, 255, 0.7);
+                        }
+                        .hero__headline {
+                                margin: 1rem 0 1.5rem;
+                                font-size: clamp(3rem, 6vw, 4.5rem);
+                                letter-spacing: -0.02em;
+                                color: #fff;
+                        }
+                        .hero__lede {
+                                font-size: 1.2rem;
+                                color: rgba(255, 255, 255, 0.8);
+                                margin-bottom: 2.5rem;
+                        }
+                        .hero-actions {
+                                display: flex;
+                                flex-wrap: wrap;
+                                gap: 1rem;
+                        }
+                        .hero-actions .button {
+                                box-shadow: 0 24px 45px rgba(37, 99, 235, 0.35);
+                        }
+                        .hero-actions .button--ghost {
+                                color: #fff;
+                                border: 1px solid rgba(255, 255, 255, 0.4);
+                                background: transparent;
+                        }
+                        .hero-actions .button--ghost:hover {
+                                background: rgba(255, 255, 255, 0.16);
+                        }
+                        .hero__status {
+                                display: flex;
+                                flex-wrap: wrap;
+                                gap: 1.5rem;
+                                align-items: center;
+                        }
+                        .hero__status-card {
+                                position: relative;
+                                padding: 1.5rem 2rem;
+                                border-radius: 18px;
+                                background: rgba(15, 23, 42, 0.75);
+                                border: 1px solid rgba(148, 163, 184, 0.18);
+                                backdrop-filter: blur(14px);
+                                display: grid;
+                                gap: 0.35rem;
+                                min-width: min(320px, 100%);
+                        }
+                        .hero__status-card strong {
+                                color: #fff;
+                                font-size: 1.25rem;
+                        }
+                        main {
+                                width: 100%;
+                                padding: 0 0 5rem;
+                        }
+                        .page-grid {
+                                width: min(1200px, calc(100% - 3rem));
+                                margin: -4.5rem auto 0;
+                                display: grid;
+                                gap: 3.5rem;
+                        }
+                        .card-section {
+                                background: #fff;
+                                border-radius: 28px;
+                                box-shadow: var(--box-shadow);
+                                padding: clamp(2.5rem, 5vw, 3.5rem);
+                                display: grid;
+                                gap: 2.5rem;
+                        }
+                        .section-header {
+                                display: grid;
+                                gap: 0.75rem;
+                        }
+                        .eyebrow {
+                                text-transform: uppercase;
+                                letter-spacing: 0.3em;
+                                font-size: 0.8rem;
+                                color: rgba(var(--gray-dark), 0.6);
+                                margin: 0;
+                        }
+                        .projects-grid {
+                                display: grid;
+                                gap: 2rem;
+                                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                        }
+                        .project-card {
+                                border-radius: 22px;
+                                border: 1px solid rgba(15, 23, 42, 0.08);
+                                padding: 2rem;
+                                display: grid;
+                                gap: 1rem;
+                                background: linear-gradient(140deg, rgba(15, 23, 42, 0.04), rgba(15, 23, 42, 0));
+                        }
+                        .project-card strong {
+                                color: rgb(var(--black));
+                        }
+                        .project-card footer {
+                                display: flex;
+                                flex-wrap: wrap;
+                                gap: 0.5rem;
+                        }
+                        .tag {
+                                display: inline-flex;
+                                align-items: center;
+                                gap: 0.25rem;
+                                padding: 0.25rem 0.75rem;
+                                border-radius: 999px;
+                                background: rgba(37, 99, 235, 0.1);
+                                color: rgba(37, 99, 235, 0.9);
+                                font-size: 0.85rem;
+                                font-weight: 600;
+                                text-transform: uppercase;
+                                letter-spacing: 0.08em;
+                        }
+                        .metrics-grid {
+                                display: grid;
+                                gap: 1.5rem;
+                                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                        }
+                        .metric {
+                                border-radius: 20px;
+                                padding: 1.75rem;
+                                background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.18), rgba(37, 99, 235, 0.05));
+                                border: 1px solid rgba(37, 99, 235, 0.12);
+                                display: grid;
+                                gap: 0.5rem;
+                        }
+                        .metric-value {
+                                font-size: clamp(2.25rem, 4vw, 3rem);
+                                color: rgb(15, 23, 42);
+                                font-weight: 700;
+                                letter-spacing: -0.03em;
+                        }
+                        .focus-grid {
+                                display: grid;
+                                gap: 2rem;
+                                grid-template-columns: minmax(220px, 280px) 1fr;
+                        }
+                        .focus-toggles {
+                                display: grid;
+                                gap: 0.75rem;
+                        }
+                        .focus-toggles button {
+                                border: 1px solid rgba(15, 23, 42, 0.12);
+                                border-radius: 16px;
+                                padding: 0.85rem 1.25rem;
+                                background: #f8fafc;
+                                font-weight: 600;
+                                text-align: left;
+                                color: rgb(var(--black));
+                                cursor: pointer;
+                                transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+                        }
+                        .focus-toggles button[aria-pressed='true'] {
+                                border-color: rgba(37, 99, 235, 0.45);
+                                box-shadow: 0 12px 30px rgba(37, 99, 235, 0.18);
+                                transform: translateY(-2px);
+                                background: rgba(37, 99, 235, 0.08);
+                        }
+                        .focus-panel {
+                                border-radius: 22px;
+                                border: 1px solid rgba(15, 23, 42, 0.08);
+                                padding: 2rem;
+                                background: white;
+                                box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+                                display: none;
+                                gap: 1rem;
+                        }
+                        .focus-panel[aria-hidden='false'] {
+                                display: grid;
+                        }
+                        .capabilities-grid {
+                                display: grid;
+                                gap: 1.5rem;
+                                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                        }
+                        .capability-card {
+                                border-radius: 18px;
+                                padding: 1.75rem;
+                                border: 1px solid rgba(15, 23, 42, 0.08);
+                                background: #f8fafc;
+                                display: grid;
+                                gap: 0.75rem;
+                        }
+                        .timeline {
+                                display: grid;
+                                gap: 2rem;
+                        }
+                        .timeline__item {
+                                border-left: 3px solid rgba(37, 99, 235, 0.35);
+                                padding-left: 1.5rem;
+                        }
+                        .timeline__item h3 {
+                                margin-bottom: 0.3rem;
+                        }
+                        .testimonials {
+                                display: grid;
+                                gap: 1.5rem;
+                                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                        }
+                        .testimonial {
+                                border-radius: 20px;
+                                padding: 2rem;
+                                background: linear-gradient(140deg, rgba(15, 23, 42, 0.08), rgba(15, 23, 42, 0));
+                                border: 1px solid rgba(15, 23, 42, 0.08);
+                                display: grid;
+                                gap: 1rem;
+                        }
+                        .tools-list {
+                                display: grid;
+                                gap: 0.75rem;
+                                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+                        }
+                        .writing-grid {
+                                display: grid;
+                                gap: 1.5rem;
+                                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                        }
+                        .writing-card {
+                                border-radius: 18px;
+                                padding: 1.75rem;
+                                border: 1px solid rgba(15, 23, 42, 0.08);
+                                background: #f8fafc;
+                                display: grid;
+                                gap: 0.75rem;
+                                text-decoration: none;
+                                color: inherit;
+                        }
+                        .writing-card:hover {
+                                border-color: rgba(37, 99, 235, 0.4);
+                                box-shadow: 0 20px 40px rgba(37, 99, 235, 0.12);
+                        }
+                        .contact-card {
+                                display: grid;
+                                gap: 1.25rem;
+                                border-radius: 20px;
+                                padding: 2.5rem;
+                                background: linear-gradient(140deg, rgba(37, 99, 235, 0.15), rgba(37, 99, 235, 0.05));
+                                border: 1px solid rgba(37, 99, 235, 0.2);
+                                text-align: center;
+                        }
+                        .contact-card .button {
+                                justify-self: center;
+                        }
+                        @media (max-width: 900px) {
+                                .hero {
+                                        padding: clamp(5rem, 15vw, 7rem) 0 4rem;
+                                }
+                                .hero__status {
+                                        flex-direction: column;
+                                }
+                                .focus-grid {
+                                        grid-template-columns: 1fr;
+                                }
+                                .focus-toggles {
+                                        grid-auto-flow: column;
+                                        overflow-x: auto;
+                                        padding-bottom: 0.5rem;
+                                }
+                                .focus-toggles button {
+                                        min-width: 220px;
+                                }
+                                .page-grid {
+                                        margin-top: -3rem;
+                                }
+                        }
+                        @media (max-width: 600px) {
+                                .hero__headline {
+                                        font-size: clamp(2.5rem, 8vw, 3.25rem);
+                                }
+                                .hero__lede {
+                                        font-size: 1.05rem;
+                                }
+                                .hero-actions {
+                                        justify-content: center;
+                                }
+                                .hero__status-card {
+                                        min-width: 100%;
+                                }
+                                .card-section {
+                                        padding: 2rem;
+                                }
+                        }
+                </style>
+        </head>
+        <body>
+                <Header />
+                <section class="hero" id="top">
+                        <div class="hero__inner">
+                                <div class="hero__content">
+                                        <p class="hero__eyebrow">Ahmed · Principal Platform Engineer</p>
+                                        <h1 class="hero__headline">I build reliable systems for ambitious missions.</h1>
+                                        <p class="hero__lede">
+                                                From orbital telemetry to real-time robotics, I help teams deliver platforms that stay resilient when the launch window opens. My work spans TypeScript, Rust, and cloud infrastructure with a focus on measurable outcomes.
+                                        </p>
+                                        <div class="hero-actions">
+                                                <a class="button" href="/projects">Browse projects</a>
+                                                <a class="button button--ghost" href="#contact">Start a conversation</a>
+                                        </div>
+                                </div>
+                                <div class="hero__status">
+                                        <div class="hero__status-card">
+                                                <strong>Currently leading</strong>
+                                                <span>Mission Control engineering @ Lumina Orbit</span>
+                                        </div>
+                                        <div class="hero__status-card">
+                                                <strong>Availability</strong>
+                                                <span>Accepting select advisory partnerships for 2025</span>
+                                        </div>
+                                </div>
+                        </div>
+                </section>
+                <main>
+                        <div class="page-grid">
+                                <section class="card-section" id="work">
+                                        <header class="section-header">
+                                                <p class="eyebrow">Selected launches</p>
+                                                <h2>Recent engineering work with measurable signal.</h2>
+                                                <p>
+                                                        A sampling of end-to-end builds blending strategy, architecture, and hands-on engineering. Dive into the full archive for more detail on the process and telemetry.
+                                                </p>
+                                        </header>
+                                        <div class="projects-grid">
+                                                {featuredProjects.map((project) => (
+                                                        <article class="project-card">
+                                                                <h3>{project.title}</h3>
+                                                                <p>{project.summary}</p>
+                                                                <p><strong>{project.outcome}</strong></p>
+                                                                <footer>
+                                                                        {project.tags.map((tag) => (
+                                                                                <span class="tag">{tag}</span>
+                                                                        ))}
+                                                                </footer>
+                                                                {project.link && (
+                                                                        <a class="link-arrow" href={project.link}>
+                                                                                Read the full story
+                                                                                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                                                                                        <path fill="currentColor" d="M13.172 12 8.222 7.05l1.414-1.414L16 12l-6.364 6.364-1.414-1.414z" />
+                                                                                </svg>
+                                                                        </a>
+                                                                )}
+                                                        </article>
+                                                ))}
+                                        </div>
+                                        <a class="button button--ghost" href="/projects">View the full project log</a>
+                                </section>
+
+                                <section class="card-section" id="signals">
+                                        <header class="section-header">
+                                                <p class="eyebrow">Telemetry</p>
+                                                <h2>Interactive mission metrics.</h2>
+                                                <p>
+                                                        Hover to preview highlights and scroll to animate live counters captured from recent engagements.
+                                                </p>
+                                        </header>
+                                        <div class="metrics-grid" data-counter-root>
+                                                {signalMetrics.map((metric) => (
+                                                        <article class="metric">
+                                                                <span class="metric-value" data-counter data-decimals={metric.decimals} data-suffix={metric.suffix} data-target={metric.value}>{metric.value}</span>
+                                                                <span>{metric.label}</span>
+                                                        </article>
+                                                ))}
+                                        </div>
+                                </section>
+
+                                <section class="card-section" id="focus">
+                                        <header class="section-header">
+                                                <p class="eyebrow">Operating modes</p>
+                                                <h2>How I approach complex engineering problems.</h2>
+                                                <p>
+                                                        Toggle through the modes to see where I lean in across discovery, delivery, and enablement.
+                                                </p>
+                                        </header>
+                                        <div class="focus-grid">
+                                                <div class="focus-toggles" role="tablist" aria-label="Engineering focus modes">
+                                                        {focusModes.map((mode, index) => (
+                                                                <button
+                                                                        type="button"
+                                                                        role="tab"
+                                                                        data-focus={mode.id}
+                                                                        aria-selected={index === 0 ? 'true' : 'false'}
+                                                                        aria-pressed={index === 0 ? 'true' : 'false'}
+                                                                        aria-controls={`focus-panel-${mode.id}`}
+                                                                        id={`focus-tab-${mode.id}`}
+                                                                >
+                                                                        {mode.label}
+                                                                </button>
+                                                        ))}
+                                                </div>
+                                                <div>
+                                                        {focusModes.map((mode, index) => (
+                                                                <div
+                                                                        class="focus-panel"
+                                                                        id={`focus-panel-${mode.id}`}
+                                                                        role="tabpanel"
+                                                                        aria-labelledby={`focus-tab-${mode.id}`}
+                                                                        aria-hidden={index === 0 ? 'false' : 'true'}
+                                                                        data-focus-panel={mode.id}
+                                                                >
+                                                                        <h3>{mode.headline}</h3>
+                                                                        <p>{mode.description}</p>
+                                                                </div>
+                                                        ))}
+                                                </div>
+                                        </div>
+                                </section>
+
+                                <section class="card-section" id="services">
+                                        <header class="section-header">
+                                                <p class="eyebrow">Capabilities</p>
+                                                <h2>Ways we can partner.</h2>
+                                                <p>
+                                                        Engagements flex from embedded leadership to targeted sprints. Whatever the shape, we anchor on outcomes, instrumentation, and healthy teams.
+                                                </p>
+                                        </header>
+                                        <div class="capabilities-grid">
+                                                {capabilities.map((capability) => (
+                                                        <div class="capability-card">
+                                                                <h3>{capability.title}</h3>
+                                                                <p>{capability.description}</p>
+                                                        </div>
+                                                ))}
+                                        </div>
+                                </section>
+
+                                <section class="card-section" id="experience">
+                                        <header class="section-header">
+                                                <p class="eyebrow">Trajectory</p>
+                                                <h2>Experience across product, platform, and robotics.</h2>
+                                        </header>
+                                        <div class="timeline">
+                                                {experience.map((item) => (
+                                                        <article class="timeline__item">
+                                                                <h3>{item.role}</h3>
+                                                                <p><strong>{item.company}</strong> · {item.period}</p>
+                                                                <p>{item.details}</p>
+                                                        </article>
+                                                ))}
+                                        </div>
+                                </section>
+
+                                <section class="card-section" id="testimonials">
+                                        <header class="section-header">
+                                                <p class="eyebrow">Signals from collaborators</p>
+                                                <h2>What teams say after launch.</h2>
+                                        </header>
+                                        <div class="testimonials">
+                                                {testimonials.map((testimonial) => (
+                                                        <figure class="testimonial">
+                                                                <blockquote>“{testimonial.quote}”</blockquote>
+                                                                <figcaption>
+                                                                        — {testimonial.name}, {testimonial.title}
+                                                                </figcaption>
+                                                        </figure>
+                                                ))}
+                                        </div>
+                                </section>
+
+                                <section class="card-section" id="toolbox">
+                                        <header class="section-header">
+                                                <p class="eyebrow">Tooling</p>
+                                                <h2>Stacks I reach for often.</h2>
+                                                <p>
+                                                        Comfortable pairing with your existing toolchain or introducing modern observability, deployment, and data streaming practices as we go.
+                                                </p>
+                                        </header>
+                                        <div class="tools-list">
+                                                {tools.map((tool) => (
+                                                        <span class="tag">{tool}</span>
+                                                ))}
+                                        </div>
+                                </section>
+
+                                <section class="card-section" id="writing">
+                                        <header class="section-header">
+                                                <p class="eyebrow">Writing</p>
+                                                <h2>Latest thinking from the field.</h2>
+                                        </header>
+                                        <div class="writing-grid">
+                                                {featuredPosts.map((post) => (
+                                                        <a class="writing-card" href={post.slug}>
+                                                                <h3>{post.data.title}</h3>
+                                                                <time datetime={post.data.pubDate.toISOString()}>
+                                                                        {post.data.pubDate.toLocaleDateString('en-US', {
+                                                                                month: 'short',
+                                                                                day: 'numeric',
+                                                                                year: 'numeric',
+                                                                        })}
+                                                                </time>
+                                                                <p>{post.data.description}</p>
+                                                        </a>
+                                                ))}
+                                        </div>
+                                </section>
+
+                                <section class="card-section" id="contact">
+                                        <header class="section-header">
+                                                <p class="eyebrow">Contact</p>
+                                                <h2>Let’s build your next launch window.</h2>
+                                        </header>
+                                        <div class="contact-card">
+                                                <p>
+                                                        Whether you need an engineering leader to steer a mission-critical delivery or a technical partner for a focused build, I’m excited to hear what you’re launching next.
+                                                </p>
+                                                <a class="button" href="mailto:hello@ahmed.dev">hello@ahmed.dev</a>
+                                                <span>Based in Seattle · Remote-friendly across GMT-8 to GMT-2</span>
+                                        </div>
+                                </section>
+                        </div>
+                </main>
+                <Footer />
+                <script is:inline>
+                        document.addEventListener('DOMContentLoaded', () => {
+                                const counters = document.querySelectorAll('[data-counter]');
+                                const counterRoot = document.querySelector('[data-counter-root]');
+                                if (counterRoot && counters.length > 0) {
+                                        const observer = new IntersectionObserver(
+                                                (entries) => {
+                                                        entries.forEach((entry) => {
+                                                                if (entry.isIntersecting) {
+                                                                        counters.forEach((counter) => {
+                                                                                if (counter.dataset.animated) return;
+                                                                                const target = Number(counter.dataset.target || '0');
+                                                                                const decimals = Number(counter.dataset.decimals || '0');
+                                                                                const suffix = counter.dataset.suffix || '';
+                                                                                const duration = 1500;
+                                                                                const start = performance.now();
+                                                                                const formatValue = (value) => value.toFixed(decimals);
+                                                                                const step = (timestamp) => {
+                                                                                        const progress = Math.min((timestamp - start) / duration, 1);
+                                                                                        const eased = 1 - Math.pow(1 - progress, 3);
+                                                                                        const current = target * eased;
+                                                                                        counter.textContent = `${formatValue(current)}${suffix}`;
+                                                                                        if (progress < 1) {
+                                                                                                requestAnimationFrame(step);
+                                                                                        } else {
+                                                                                                counter.textContent = `${formatValue(target)}${suffix}`;
+                                                                                                counter.dataset.animated = 'true';
+                                                                                        }
+                                                                                };
+                                                                                requestAnimationFrame(step);
+                                                                        });
+                                                                        observer.disconnect();
+                                                                }
+                                                        });
+                                                },
+                                                { threshold: 0.35 },
+                                        );
+                                        observer.observe(counterRoot);
+                                }
+
+                                const focusButtons = Array.from(document.querySelectorAll('[data-focus]'));
+                                const focusPanels = Array.from(document.querySelectorAll('[data-focus-panel]'));
+                                if (focusButtons.length && focusPanels.length) {
+                                        const activate = (id) => {
+                                                focusButtons.forEach((button) => {
+                                                        const isActive = button.dataset.focus === id;
+                                                        button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+                                                        button.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                                                });
+                                                focusPanels.forEach((panel) => {
+                                                        const isActive = panel.dataset.focusPanel === id;
+                                                        panel.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+                                                });
+                                        };
+                                        focusButtons.forEach((button) => {
+                                                button.addEventListener('click', () => activate(button.dataset.focus));
+                                                button.addEventListener('keydown', (event) => {
+                                                        if (event.key === 'Enter' || event.key === ' ') {
+                                                                event.preventDefault();
+                                                                activate(button.dataset.focus);
+                                                        }
+                                                });
+                                        });
+                                }
+                        });
+                </script>
+        </body>
 </html>
