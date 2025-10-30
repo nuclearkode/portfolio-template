@@ -1,9 +1,9 @@
 {
   "name": "portfolio-template",
-  "description": "Build a personal website, blog, or portfolio with Astro.",
+  "description": "Jordan Mitchell's product design portfolio built with Astro.",
   "private": true,
   "cloudflare": {
-    "label": "Astro Framework Starter",
+    "label": "Product Design Portfolio",
     "products": [
       "Workers"
     ],

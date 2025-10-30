@@ -3,48 +3,395 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+        (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const featuredPosts = posts.slice(0, 3);
+
+const projects = [
+        {
+                title: 'Compass Banking App',
+                summary:
+                        'Led a year-long redesign that reduced onboarding friction, aligned the product with accessibility standards, and unlocked a 26% lift in mobile engagement.',
+                outcome: 'Result · 71% of new accounts were opened on mobile post-launch.',
+                tags: ['Design Strategy', 'Design Systems', 'UX Research'],
+                link: '/blog/compass-banking-app/',
+        },
+        {
+                title: 'Pathfinder Travel Platform',
+                summary:
+                        'Crafted an end-to-end booking flow optimized for group travel. Prototyped, tested with 42 travelers, and partnered with engineering to deliver the MVP in 12 weeks.',
+                outcome: 'Result · Checkout completion increased by 33% within the first month.',
+                tags: ['Product Design', 'Prototyping', 'User Testing'],
+                link: '/blog/pathfinder-travel-platform/',
+        },
+        {
+                title: 'Atlas Dashboard Modernization',
+                summary:
+                        'Defined the visual language, information architecture, and data visualization standards for a complex analytics dashboard used by enterprise teams.',
+                outcome: 'Result · Support tickets dropped by 48% as teams gained clarity into their metrics.',
+                tags: ['Information Architecture', 'Design Ops', 'Data Visualization'],
+                link: '/blog/atlas-dashboard-modernization/',
+        },
+];
+
+const services = [
+        {
+                title: 'Product Design Leadership',
+                description:
+                        'Fractional design leadership that clarifies product vision, rallies cross-functional teams, and keeps execution focused on measurable outcomes.',
+        },
+        {
+                title: 'Experience Strategy Sprints',
+                description:
+                        'Two-week engagements to uncover insights, map opportunity areas, and deliver customer journeys that drive roadmap alignment.',
+        },
+        {
+                title: 'Design Systems & Ops',
+                description:
+                        'Build scalable systems, rituals, and tooling so teams ship faster without sacrificing craft or accessibility.',
+        },
+        {
+                title: 'Inclusive Research & Testing',
+                description:
+                        'Conduct moderated studies, synthesize findings, and coach teams on inclusive research practices that broaden reach.',
+        },
+];
+
+const experience = [
+        {
+                role: 'Principal Product Designer',
+                company: 'Lumina Health',
+                period: '2021 — Present',
+                details:
+                        'Own the patient experience across mobile and web. Partner with product and engineering to ship outcomes-focused solutions for chronic care.',
+        },
+        {
+                role: 'Design Lead',
+                company: 'Northwind Labs',
+                period: '2017 — 2021',
+                details:
+                        'Scaled a design practice from 2 to 14 while delivering enterprise AI tools for operations teams across manufacturing and logistics.',
+        },
+        {
+                role: 'Senior UX Designer',
+                company: 'Brightside',
+                period: '2013 — 2017',
+                details:
+                        'Shipped growth experiments, brand refreshes, and a customer support platform that improved NPS by 19 points.',
+        },
+];
+
+const testimonials = [
+        {
+                quote:
+                        'Jordan guided our product strategy through a pivotal pivot. Their ability to connect research to roadmaps helped us hit product-market fit within two quarters.',
+                name: 'Casey Nguyen',
+                title: 'VP Product, Lumina Health',
+        },
+        {
+                quote:
+                        'The design system Jordan delivered became the connective tissue between design and engineering. We ship faster and with more confidence.',
+                name: 'Priya Desai',
+                title: 'Director of Engineering, Northwind Labs',
+        },
+];
+
+const tools = [
+        'Figma',
+        'Penpot',
+        'Miro',
+        'Lookback',
+        'Notion',
+        'Storybook',
+        'Dovetail',
+        'Webflow',
+];
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+        <head>
+                <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+                <style>
+                        .hero {
+                                display: grid;
+                                gap: 3rem;
+                                align-items: center;
+                                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                                padding: 4rem 0 3rem;
+                        }
+                        .hero-copy h1 {
+                                margin-bottom: 1.25rem;
+                        }
+                        .hero-copy p {
+                                font-size: 1.2rem;
+                                color: rgb(var(--gray));
+                                max-width: 48ch;
+                        }
+                        .hero-actions {
+                                display: flex;
+                                gap: 1rem;
+                                flex-wrap: wrap;
+                                margin-top: 2rem;
+                        }
+                        .hero-figure {
+                                position: relative;
+                        }
+                        .hero-figure img {
+                                width: 100%;
+                                border-radius: 24px;
+                                box-shadow: var(--box-shadow);
+                        }
+                        .hero-figure::after {
+                                content: '';
+                                position: absolute;
+                                inset: 12px;
+                                border-radius: 24px;
+                                border: 2px solid rgba(37, 99, 235, 0.2);
+                                pointer-events: none;
+                        }
+                        .projects-grid {
+                                margin-top: 2rem;
+                        }
+                        .project-card {
+                                display: grid;
+                                gap: 1.25rem;
+                                background: white;
+                                border-radius: 22px;
+                                padding: 2.5rem;
+                                box-shadow: var(--box-shadow);
+                        }
+                        .project-card h3 {
+                                margin: 0;
+                        }
+                        .project-card .tag {
+                                margin-right: 0.5rem;
+                        }
+                        .project-meta {
+                                display: flex;
+                                flex-wrap: wrap;
+                                gap: 0.5rem;
+                                margin-top: -0.25rem;
+                        }
+                        .services-grid {
+                                margin-top: 2rem;
+                        }
+                        .services-grid .card {
+                                min-height: 220px;
+                        }
+                        .tools-panel {
+                                background: white;
+                                border-radius: 20px;
+                                padding: 2rem;
+                                box-shadow: var(--box-shadow);
+                                display: grid;
+                                gap: 1.25rem;
+                        }
+                        .timeline {
+                                margin-top: 2rem;
+                        }
+                        .testimonials {
+                                margin-top: 2rem;
+                                display: grid;
+                                gap: 2rem;
+                                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                        }
+                        .writing-grid {
+                                margin-top: 2rem;
+                                display: grid;
+                                gap: 2rem;
+                                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                        }
+                        .writing-card {
+                                background: white;
+                                border-radius: 18px;
+                                padding: 2rem;
+                                box-shadow: var(--box-shadow);
+                                display: grid;
+                                gap: 1rem;
+                        }
+                        .writing-card h3 {
+                                margin: 0;
+                        }
+                        .writing-card a {
+                                text-decoration: none;
+                                color: inherit;
+                        }
+                        .writing-card a:hover h3 {
+                                color: var(--accent);
+                        }
+                        .writing-card time {
+                                color: rgb(var(--gray));
+                                font-size: 0.95rem;
+                        }
+                        .writing-card p {
+                                color: rgb(var(--gray));
+                        }
+                        @media (max-width: 720px) {
+                                .hero {
+                                        padding: 3rem 0 2rem;
+                                }
+                        }
+                </style>
+        </head>
+        <body>
+                <Header />
+                <main>
+                        <section class="hero">
+                                <div class="hero-copy">
+                                        <p class="eyebrow">Jordan Mitchell · Product Designer</p>
+                                        <h1>Designing inclusive products that move metrics and hearts.</h1>
+                                        <p>
+                                                I help teams transform insight into experiences people love. From vision decks and
+                                                research synthesis to the pixels in production, I partner across disciplines to bring
+                                                digital products to market with clarity and care.
+                                        </p>
+                                        <div class="hero-actions">
+                                                <a class="button" href="#work">See recent work</a>
+                                                <a class="button button--ghost" href="mailto:hello@jordanmitchell.design">Say hello</a>
+                                        </div>
+                                </div>
+                                <div class="hero-figure">
+                                        <img src="/blog-placeholder-5.jpg" alt="Jordan collaborating with teammates while sketching flows" />
+                                </div>
+                        </section>
+
+                        <section id="work" class="section">
+                                <div class="section-intro">
+                                        <p class="eyebrow">Selected work</p>
+                                        <h2>Recent outcomes from embedded partnerships.</h2>
+                                        <p>
+                                                Each engagement blends research, prototyping, and facilitation to reduce uncertainty.
+                                                Dive into the full case studies for a look at the process, decisions, and measurable
+                                                impact.
+                                        </p>
+                                </div>
+                                <div class="projects-grid grid grid--two">
+                                        {projects.map((project) => (
+                                                <article class="project-card">
+                                                        <header>
+                                                                <h3>{project.title}</h3>
+                                                                <p>{project.summary}</p>
+                                                        </header>
+                                                        <p><strong>{project.outcome}</strong></p>
+                                                        <div class="project-meta">
+                                                                {project.tags.map((tag) => (
+                                                                        <span class="tag">{tag}</span>
+                                                                ))}
+                                                        </div>
+                                                        <a class="link-arrow" href={project.link}
+                                                                >Read the case study
+                                                                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                                                                        <path
+                                                                                fill="currentColor"
+                                                                                d="M13.172 12 8.222 7.05l1.414-1.414L16 12l-6.364 6.364-1.414-1.414z"
+                                                                        />
+                                                                </svg>
+                                                        </a>
+                                                </article>
+                                        ))}
+                                </div>
+                        </section>
+
+                        <section id="services" class="section">
+                                <div class="section-intro">
+                                        <p class="eyebrow">How we can collaborate</p>
+                                        <h2>Flexible engagements tailored to your stage.</h2>
+                                        <p>
+                                                Whether you need a thought partner to shape vision or an embedded leader to ship the
+                                                next release, we can design an engagement that meets you where you are.
+                                        </p>
+                                </div>
+                                <div class="services-grid grid grid--two">
+                                        {services.map((service) => (
+                                                <div class="card">
+                                                        <h3>{service.title}</h3>
+                                                        <p>{service.description}</p>
+                                                </div>
+                                        ))}
+                                </div>
+                                <div class="tools-panel">
+                                        <h3>Tools in heavy rotation</h3>
+                                        <div class="badge-list">
+                                                {tools.map((tool) => (
+                                                        <span class="tag">{tool}</span>
+                                                ))}
+                                        </div>
+                                </div>
+                        </section>
+
+                        <section class="section">
+                                <div class="section-intro">
+                                        <p class="eyebrow">Experience</p>
+                                        <h2>Over a decade guiding teams from vision to launch.</h2>
+                                        <p>
+                                                Collaboration is my favorite tool. I create clarity, document decisions, and invite the
+                                                right voices into the room at the right moment.
+                                        </p>
+                                </div>
+                                <div class="timeline">
+                                        {experience.map((item) => (
+                                                <article class="timeline__item">
+                                                        <h3>{item.role}</h3>
+                                                        <p><strong>{item.company}</strong> · {item.period}</p>
+                                                        <p>{item.details}</p>
+                                                </article>
+                                        ))}
+                                </div>
+                        </section>
+
+                        <section class="section">
+                                <div class="section-intro">
+                                        <p class="eyebrow">Praise</p>
+                                        <h2>Trusted by product leaders across industries.</h2>
+                                        <p>
+                                                Partnerships are personal. These teams invited me in when the stakes were high — here’s
+                                                what they had to say about the collaboration.
+                                        </p>
+                                </div>
+                                <div class="testimonials">
+                                        {testimonials.map((item) => (
+                                                <blockquote class="testimonial">
+                                                        <p>“{item.quote}”</p>
+                                                        <cite>{item.name}</cite>
+                                                        <span>{item.title}</span>
+                                                </blockquote>
+                                        ))}
+                                </div>
+                        </section>
+
+                        <section id="writing" class="section">
+                                <div class="section-intro">
+                                        <p class="eyebrow">Latest writing</p>
+                                        <h2>Notes on process, leadership, and inclusive design.</h2>
+                                        <p>
+                                                Long-form reflections on the craft of building products. Subscribe to the RSS feed to
+                                                get new posts in your reader of choice.
+                                        </p>
+                                </div>
+                                <div class="writing-grid">
+                                        {featuredPosts.map((post) => (
+                                                <article class="writing-card">
+                                                        <a href={`/blog/${post.id}/`}>
+                                                                <time datetime={post.data.pubDate.toISOString()}>
+                                                                        {post.data.pubDate.toLocaleDateString('en-US', {
+                                                                                month: 'long',
+                                                                                day: 'numeric',
+                                                                                year: 'numeric',
+                                                                        })}
+                                                                </time>
+                                                                <h3>{post.data.title}</h3>
+                                                                <p>{post.data.description}</p>
+                                                        </a>
+                                                </article>
+                                        ))}
+                                </div>
+                        </section>
+                </main>
+                <Footer />
+        </body>
 </html>
